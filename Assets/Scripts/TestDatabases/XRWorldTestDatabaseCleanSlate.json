@@ -1,0 +1,301 @@
+﻿{
+  "skinType" : 0,
+  "tiles" : [
+    {
+      "groundType" : 0,
+      "posX" : 0,
+      "posZ" : 0,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 1,
+      "posZ" : 0,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 2,
+      "posZ" : 0,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 3,
+      "posZ" : 0,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType": 0,
+      "posX": 4,
+      "posZ": 0,
+      "placeableObjectData": {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 0,
+      "posZ" : 1,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 1,
+      "posZ" : 1,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 2,
+      "posZ" : 1,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 3,
+      "posZ" : 1,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 4,
+      "posZ" : 1,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 0,
+      "posZ" : 2,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 1,
+      "posZ" : 2,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 2,
+      "posZ" : 2,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 3,
+      "posZ" : 2,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType": 0,
+      "posX": 4,
+      "posZ": 2,
+      "placeableObjectData": {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 0,
+      "posZ" : 3,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 1,
+      "posZ" : 3,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 2,
+      "posZ" : 3,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 3,
+      "posZ" : 3,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType": 0,
+      "posX": 4,
+      "posZ": 3,
+      "placeableObjectData": {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 0,
+      "posZ" : 4,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 1,
+      "posZ" : 4,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 2,
+      "posZ" : 4,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType" : 0,
+      "posX" : 3,
+      "posZ" : 4,
+      "placeableObjectData" :
+      {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    },
+    {
+      "groundType": 0,
+      "posX": 4,
+      "posZ": 4,
+      "placeableObjectData": {
+        "id": 0,
+        "level": 1,
+        "placedBy": "Richard Test user",
+        "timestamp": ""
+      }
+    }
+  ]
+}
