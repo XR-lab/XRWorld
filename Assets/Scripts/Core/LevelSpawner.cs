@@ -8,25 +8,24 @@ namespace XRWorld.Core
         [SerializeField] private GameObject _tilePrefab;
         [SerializeField] private TileLibrary _tileLibrary;
 
-        [SerializeField] private float _maxHeightOffset;
-        [SerializeField] private float _heightTiers;
+        [SerializeField] private float _maxHeightOffset = 0.25f;
+        [SerializeField] private float _heightTiers = 4;
         
         public void SpawnLevel(LevelData levelData)
         {
-            float heightSample = _maxHeightOffset / (_heightTiers - 0);
-            float heightStep = 1f / _heightTiers;
-            
-            Vector2 levelSize = GetMaxLevelSize(levelData);
-            
+            float scaledHeightStep = _maxHeightOffset / (_heightTiers - 1);
+            float unscaledHeightStep = 1f / _heightTiers;
+            Vector2 levelSize = levelData.GetMaxLevelSize();
+ 
             foreach (var tileData in levelData.tiles)
             {
                 float yOffset = Mathf.PerlinNoise(tileData.posX / levelSize.x, tileData.posZ / levelSize.y);
                 
                 for (int i = 0; i < _heightTiers; i++)
                 {
-                    if (yOffset >= heightStep * i && yOffset < heightStep * (i+1))
+                    if (yOffset >= unscaledHeightStep * i && yOffset < unscaledHeightStep * (i+1))
                     {
-                        yOffset = heightSample * i;
+                        yOffset = scaledHeightStep * i;
                     }
                 }
                 
@@ -44,22 +43,8 @@ namespace XRWorld.Core
                 }
             }
 
+            // adjust spawner position offset, to center spawnpostion of level. Might not need this in AR.
             transform.position =  new Vector3(transform.position.x - levelSize.x / 2f, transform.position.y, transform.position.z - levelSize.y / 2f);
-        }
-
-        private Vector2 GetMaxLevelSize(LevelData levelData)
-        {
-            Vector2 size = Vector2.zero;
-
-            foreach (var tileData in levelData.tiles)
-            {
-                if (tileData.posX > size.x)
-                    size.x = tileData.posX;
-                if (tileData.posZ > size.y)
-                    size.y = tileData.posZ;
-            }
-
-            return size;
         }
     }
 }
