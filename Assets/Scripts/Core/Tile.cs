@@ -28,7 +28,7 @@ namespace XRWorld.Core
         {
             _tileData = tileData;
             
-            _renderer.material.color = tileLibrary.GetColor((int)tileData.groundType);
+            _renderer.material = tileLibrary.GetMaterial((int)tileData.groundType);
         }
     }
     
@@ -37,8 +37,8 @@ namespace XRWorld.Core
     {
         public enum GroundType
         {
-            Earth,
             Grass,
+            Stone,
             Water
         }
 

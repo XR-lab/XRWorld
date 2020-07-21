@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -6,11 +6,13 @@ using UnityEngine.XR.ARSubsystems;
 using XRWorld.Core;
 using XRWorld.Database;
 
-namespace XRWorld.ArTapToPlace
+namespace XRWorld.Interaction
 {
-
-    public class ArTapToPlaceObject : MonoBehaviour
+    public class ARTapToPlaceObject : MonoBehaviour
     {
+        // for debugging purpose so we can easily run in editor
+        [SerializeField] private bool _runInEditor;
+        
         public GameObject placementIndicator;
         
         private JSONParser _jsonParser;
@@ -26,6 +28,8 @@ namespace XRWorld.ArTapToPlace
             _levelSpawner = FindObjectOfType<LevelSpawner>();
             _raycastManager = FindObjectOfType<ARRaycastManager>();
             
+            if (_runInEditor)
+                PlaceObject();
         }
 
         void Update()
@@ -43,9 +47,17 @@ namespace XRWorld.ArTapToPlace
         private void PlaceObject()
         {
             LevelData data = _jsonParser.ParseJSONToLevelData();
-            _levelSpawner.SpawnLevel(data, _placementPose.position, _placementPose.rotation);
+
+            Vector3 spawnPosition = _placementPose.position;
+            
+            // place object, in ok position when we test in editor...
+            if (_runInEditor)
+                spawnPosition = new Vector3(-2, -3, 6);
+                
+            _levelSpawner.SpawnLevel(data, spawnPosition, _placementPose.rotation);
             isPlaced = true;
-            //Instantiate(objectToPlace, _placementPose.position, _placementPose.rotation);
+            placementIndicator.SetActive(false);
+            enabled = false;
         }
 
         private void UpdatePlacementIndicator()
@@ -70,7 +82,6 @@ namespace XRWorld.ArTapToPlace
             _placementPoseIsValid = hits.Count > 0;
             if (_placementPoseIsValid)
             {
-                Debug.Log(hits[0]);
                 _placementPose = hits[0].pose;
 
                 var cameraForward = Camera.main.transform.forward;
