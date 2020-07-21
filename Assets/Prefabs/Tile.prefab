@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1206274235166416168}
   - component: {fileID: 7410131608213401703}
   - component: {fileID: 1118818378297947301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,3 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b830ec7d97e03b46894e6d57918cd7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tileData:
+    groundType: 0
+    posX: 0
+    posZ: 0
+    placeableObjectData:
+      id: 0
+      level: 0
+      placedBy: 
+      timeStamp: 

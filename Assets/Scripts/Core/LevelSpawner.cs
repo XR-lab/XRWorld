@@ -42,7 +42,7 @@ namespace XRWorld.Core
             }
 
             // adjust spawner position offset, to center spawnpostion of level. Might not need this in AR.
-            transform.position =  new Vector3(transform.position.x - levelSize.x / 2f, transform.position.y, transform.position.z - levelSize.y / 2f);
+            transform.position = new Vector3(-2, -2.5f, 5);
         }
     }
 }
