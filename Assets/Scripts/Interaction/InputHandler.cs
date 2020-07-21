@@ -1,25 +1,30 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-
-namespace XRWorld.SelectBlock
+using UnityEngine;
+using XRWorld.Core;
+namespace XRWorld.Interaction
 {
-
-
-    public class SelectBlock : MonoBehaviour
+    [RequireComponent(typeof(TileSelector))]
+    public class InputHandler : MonoBehaviour
     {
         public bool useMouseInput = true;
-        public bool openUI = false;
-        private ARRaycastManager _raycastManager;
-        [SerializeField] private PlacementBlock[] placedObjects;
-        private Vector2 _touchPos = default;
+        [SerializeField] private LayerMask _mask;
+
+        private Vector2 _touchPos;
         private Camera _arCamera;
+        private TileSelector _tileSelector;
+
+        private void Awake()
+        {
+            _tileSelector = GetComponent<TileSelector>();
+        }
 
         void Start()
         {
-            ChangeSelectedObject(placedObjects[0]);
             _arCamera = Camera.main;
         }
 
@@ -52,16 +57,36 @@ namespace XRWorld.SelectBlock
         {
             Ray ray = _arCamera.ScreenPointToRay(inputPosition);
             RaycastHit hitObject;
-            if (Physics.Raycast(ray, out hitObject))
+            if (Physics.Raycast(ray, out hitObject, Mathf.Infinity, _mask))
             {
-                PlacementBlock placementBlock = hitObject.transform.GetComponent<PlacementBlock>();
-                if (placementBlock != null)
+                print(hitObject.transform.name);
+                Tile tile = hitObject.transform.GetComponent<Tile>();
+                if (tile != null)
                 {
-                    ChangeSelectedObject(placementBlock);
+                    _tileSelector.SelectTile(tile);
                 }
             }
         }
-
+        
+        /*
+        void ChangeSelectedObject(Tile selected)
+        {
+            foreach (PlacementBlock current in placedObjects)
+            {
+                MeshRenderer meshRenderer = current.GetComponent<MeshRenderer>();
+                if (selected != current)
+                {
+                    current.isSelected = false;
+                    meshRenderer.material.color = Color.yellow;
+                }
+                else
+                {
+                    current.isSelected = true;
+                    meshRenderer.material.color = Color.magenta;
+                }
+            }
+        }
+        */
         /*
         void FindBlock()
         
@@ -88,22 +113,6 @@ namespace XRWorld.SelectBlock
             }
         }
         */
-        void ChangeSelectedObject(PlacementBlock selected)
-        {
-            foreach (PlacementBlock current in placedObjects)
-            {
-                MeshRenderer meshRenderer = current.GetComponent<MeshRenderer>();
-                if (selected != current)
-                {
-                    current.isSelected = false;
-                    meshRenderer.material.color = Color.yellow;
-                }
-                else
-                {
-                    current.isSelected = true;
-                    meshRenderer.material.color = Color.magenta;
-                }
-            }
-        }
+        
     }
 }

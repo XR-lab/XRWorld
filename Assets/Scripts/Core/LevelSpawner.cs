@@ -10,7 +10,7 @@ namespace XRWorld.Core
         [SerializeField] private float _maxHeightOffset = 0.25f;
         [SerializeField] private float _heightTiers = 4;
         
-        public void SpawnLevel(LevelData levelData)
+        public void SpawnLevel(LevelData levelData, Vector3 placementPosition, Quaternion placementRotation)
         {
             float scaledHeightStep = _maxHeightOffset / (_heightTiers - 1);
             float unscaledHeightStep = 1f / _heightTiers;
@@ -41,7 +41,8 @@ namespace XRWorld.Core
             }
 
             // adjust spawner position offset, to center spawnpostion of level. Might not need this in AR.
-            transform.position =  new Vector3(transform.position.x - levelSize.x / 2f, transform.position.y, transform.position.z - levelSize.y / 2f);
+            transform.position = placementPosition;
+            transform.rotation = placementRotation;
         }
     }
 }

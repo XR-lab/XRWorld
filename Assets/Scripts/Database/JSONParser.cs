@@ -8,13 +8,9 @@ namespace XRWorld.Database
     public class JSONParser : MonoBehaviour
     {
         public TextAsset database;
-
-        void Start()
+        public LevelData ParseJSONToLevelData()
         {
-            LevelData data = JsonUtility.FromJson<LevelData>(database.ToString());
-
-            // TODO: fix direct reference to LevelSpawner
-            GetComponent<LevelSpawner>().SpawnLevel(data);
+            return JsonUtility.FromJson<LevelData>(database.ToString());
         }
     }
 }
