@@ -18,7 +18,7 @@ MonoBehaviour:
   - {r: 0.08926833, g: 1, b: 0, a: 0}
   - {r: 0, g: 0.8085568, b: 1, a: 0}
   placeableObjects:
-  - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}
+  - {fileID: 919132149155446097, guid: a6bd9de67be5bf04180b89357aee449e, type: 3}
   - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}
   - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}
   - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}
