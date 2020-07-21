@@ -9,6 +9,8 @@
         <e p="Scripts" t="Include">
           <e p="ARTapScaleAndSpawn.cs" t="Include" />
           <e p="ArTapToPlaceObject.cs" t="Include" />
+          <e p="PlacementBlock.cs" t="Include" />
+          <e p="SelectBlock.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

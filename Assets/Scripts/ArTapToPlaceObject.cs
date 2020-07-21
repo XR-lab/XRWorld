@@ -1,66 +1,75 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class ArTapToPlaceObject : MonoBehaviour
+namespace XRWorld.ArTapToPlace
 {
-    public GameObject objectToPlace;
-    public GameObject placementIndicator;
 
-    private ARRaycastManager _raycastManager;
-    private Pose _placementPose;
-    private bool _placementPoseIsValid = false;
-    void Start()
+
+    public class ArTapToPlaceObject : MonoBehaviour
     {
-        _raycastManager = FindObjectOfType<ARRaycastManager>();
-        
-    }
+        public GameObject objectToPlace;
+        public GameObject placementIndicator;
 
-    void Update()
-    {
-        UpdatePlacementPose();
-        UpdatePlacementIndecator();
+        private ARRaycastManager _raycastManager;
+        private Pose _placementPose;
+        private bool _placementPoseIsValid = false;
+        public bool isPlaced = false;
 
-        if ( Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        void Start()
         {
-            PlaceObject();
+            _raycastManager = FindObjectOfType<ARRaycastManager>();
+
         }
-    }
 
-    private void PlaceObject()
-    {
-        Instantiate(objectToPlace, _placementPose.position, _placementPose.rotation);
-    }
-
-    private void UpdatePlacementIndecator()
-    {
-        if (_placementPoseIsValid)
+        void Update()
         {
-            placementIndicator.SetActive(true);
-            placementIndicator.transform.SetPositionAndRotation(_placementPose.position, _placementPose.rotation);
+            UpdatePlacementPose();
+            UpdatePlacementIndecator();
+
+            if (Input.touchCount > 0 && isPlaced == false)
+            {
+                PlaceObject();
+            }
+
         }
-        else
+
+        private void PlaceObject()
         {
-            placementIndicator.SetActive(false);
+            isPlaced = true;
+            Instantiate(objectToPlace, _placementPose.position, _placementPose.rotation);
         }
-    }
 
-    private void UpdatePlacementPose()
-    {
-        Vector2 screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
-        var hits = new List<ARRaycastHit>();
-        _raycastManager.Raycast(screenCenter, hits,TrackableType.Planes);
-        Debug.Log(hits[0]);
-        _placementPoseIsValid = hits.Count > 0;
-        if (_placementPoseIsValid)
+        private void UpdatePlacementIndecator()
         {
-            _placementPose = hits[0].pose;
+            if (_placementPoseIsValid)
+            {
+                placementIndicator.SetActive(true);
+                placementIndicator.transform.SetPositionAndRotation(_placementPose.position, _placementPose.rotation);
+            }
+            else
+            {
+                placementIndicator.SetActive(false);
+            }
+        }
 
-            var cameraForward = Camera.main.transform.forward;
-            var cameraBearing = new Vector3(cameraForward.x,0, cameraForward.z).normalized;
-            _placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+        private void UpdatePlacementPose()
+        {
+            Vector2 screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+            var hits = new List<ARRaycastHit>();
+            _raycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
+            Debug.Log(hits[0]);
+            _placementPoseIsValid = hits.Count > 0;
+            if (_placementPoseIsValid)
+            {
+                _placementPose = hits[0].pose;
+
+                var cameraForward = Camera.main.transform.forward;
+                var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+                _placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+            }
         }
     }
 }
