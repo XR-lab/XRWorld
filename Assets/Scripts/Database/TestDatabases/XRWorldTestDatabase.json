@@ -7,54 +7,54 @@
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 1,
       "posX" : 1,
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 2,
       "posX" : 2,
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 2,
       "posX" : 3,
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType": 0,
+      "groundType": 1,
       "posX": 4,
       "posZ": 0,
       "placeableObjectData": {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -66,19 +66,19 @@
       "posZ" : 1,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 1,
       "posX" : 1,
       "posZ" : 1,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -90,7 +90,7 @@
       "posZ" : 1,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -102,19 +102,19 @@
       "posZ" : 1,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 2,
       "posX" : 4,
       "posZ" : 1,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -126,19 +126,19 @@
       "posZ" : 2,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 1,
       "posX" : 1,
       "posZ" : 2,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -150,14 +150,14 @@
       "posZ" : 2,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 1,
       "posX" : 3,
       "posZ" : 2,
       "placeableObjectData" :
@@ -173,55 +173,55 @@
       "posX": 4,
       "posZ": 2,
       "placeableObjectData": {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 2,
       "posX" : 0,
       "posZ" : 3,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 1,
       "posX" : 1,
       "posZ" : 3,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 1,
       "posX" : 2,
       "posZ" : 3,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 2,
       "posX" : 3,
       "posZ" : 3,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -232,19 +232,19 @@
       "posX": 4,
       "posZ": 3,
       "placeableObjectData": {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 2,
       "posX" : 0,
       "posZ" : 4,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -256,19 +256,19 @@
       "posZ" : 4,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType" : 0,
+      "groundType" : 1,
       "posX" : 2,
       "posZ" : 4,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
@@ -280,18 +280,18 @@
       "posZ" : 4,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
     },
     {
-      "groundType": 0,
+      "groundType": 2,
       "posX": 4,
       "posZ": 4,
       "placeableObjectData": {
-        "id": 0,
+        "id": -1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
