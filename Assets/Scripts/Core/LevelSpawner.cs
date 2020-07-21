@@ -5,7 +5,7 @@ namespace XRWorld.Core
 {
     public class LevelSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject _tilePrefab;
+        [SerializeField] private Tile _tilePrefab;
         [SerializeField] private TileLibrary _tileLibrary;
 
         [SerializeField] private float _maxHeightOffset = 0.25f;
@@ -30,9 +30,8 @@ namespace XRWorld.Core
                 }
                 
                 Vector3 spawnPosition = new Vector3(tileData.posX, yOffset, tileData.posZ);
-                GameObject tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
-                Renderer renderer = tile.GetComponent<Renderer>();
-                renderer.material.color = _tileLibrary.GetColor((int)tileData.groundType);
+                Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
+                tile.SetTileData(tileData, _tileLibrary);
                 
                 if (tileData.placeableObjectData.id > -1)
                 {

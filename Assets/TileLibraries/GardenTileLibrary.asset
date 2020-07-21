@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GardenTileLibrary
   m_EditorClassIdentifier: 
   _skinType: 0
-  _GroundTypes:
-  - {r: 1, g: 0.46176243, b: 0, a: 0}
-  - {r: 0.25080538, g: 1, b: 0, a: 0}
-  - {r: 0, g: 0.9505663, b: 1, a: 0}
+  _groundTypes:
+  - {r: 1, g: 0.36659658, b: 0, a: 0}
+  - {r: 0.08926833, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.8085568, b: 1, a: 0}
   placeableObjects:
   - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace XRWorld.Database
+namespace XRWorld.Core
 {
     [System.Serializable]
     public struct LevelData
@@ -27,30 +27,5 @@ namespace XRWorld.Database
 
             return size;
         }
-    }
-
-    [System.Serializable]
-    public struct TileData
-    {
-        public enum GroundType
-        {
-            Earth,
-            Grass,
-            Water
-        }
-
-        public GroundType groundType;
-        public int posX;
-        public int posZ;
-        public PlaceableObjectData placeableObjectData;
-    }
-
-    [System.Serializable]
-    public struct PlaceableObjectData
-    {
-        public int id;
-        public int level;
-        public string placedBy;
-        public string timeStamp;
     }
 }
