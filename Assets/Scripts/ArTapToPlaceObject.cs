@@ -19,7 +19,6 @@ namespace XRWorld.ArTapToPlace
         private Pose _placementPose;
         private bool _placementPoseIsValid = false;
         public bool isPlaced = false;
-        public GameObject objectToPlace;
 
         void Start()
         {
