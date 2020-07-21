@@ -34,8 +34,7 @@ namespace XRWorld.Core
                 
                 if (tileData.placeableObjectData.id > -1)
                 {
-                    //TODO: calculate y-offset (or save in library)
-                    Vector3 spawnableObjectPosition = new Vector3(tileData.posX, spawnPosition.y+0.75f, tileData.posZ);
+                    Vector3 spawnableObjectPosition = tile.PlaceableObjectSpawnPoint;
                     Instantiate(_tileLibrary.placeableObjects[tileData.placeableObjectData.id], spawnableObjectPosition,
                         Quaternion.identity, tile.transform);
                 }

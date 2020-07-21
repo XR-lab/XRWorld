@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Prefabs.meta
 guid: 07dc48ab1c47a804d8c8f29ac3882f47
 =======
 guid: 5dd9080d47d9c7943b726aa7128b65f9
 >>>>>>> origin/develop:Assets/3rd Party.meta
-=======
-guid: 3513a402cc7b5de40b2fb98d49dd162f
->>>>>>> origin/develop
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

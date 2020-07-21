@@ -9,7 +9,13 @@ namespace XRWorld.Core
     public class Tile : MonoBehaviour
     {
         // data visualized for debuggin purpose
+        [SerializeField] private Transform _placeableObjectSpawnpoint;
         [SerializeField] private TileData _tileData;
+      
+        public Vector3 PlaceableObjectSpawnPoint
+        {
+            get { return _placeableObjectSpawnpoint.position; }
+        }
 
         private Renderer _renderer;
 
