@@ -43,7 +43,7 @@
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": -1,
+        "id": 1,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""

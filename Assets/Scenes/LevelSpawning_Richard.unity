@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 1606609851034241761, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
       propertyPath: _runInEditor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1606609851360761664, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
