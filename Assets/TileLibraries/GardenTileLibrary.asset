@@ -18,8 +18,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 40d657b9502221e4ca2cc259e270b386, type: 2}
   - {fileID: 2100000, guid: 1e92d7cff60543a438bd68ace3612f7e, type: 2}
   placeableObjects:
-  - {fileID: 919132149155446097, guid: a6bd9de67be5bf04180b89357aee449e, type: 3}
-  - {fileID: 4831065468605727289, guid: 2f609fcda2cef804aa5d5bdf365b9f27, type: 3}
-  - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}
-  - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}
-  - {fileID: 7376849818327884793, guid: e9269486e5b51c548a9928ac52432cdf, type: 3}
+  - {fileID: 11400000, guid: 5982fd31775ce5248990fd59412e95ce, type: 2}
+  - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}
+  - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}
+  - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}
+  - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}

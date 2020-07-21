@@ -4,7 +4,7 @@ using XRWorld.Database;
 
 namespace XRWorld.Core
 {
-    [CreateAssetMenu(fileName = "TileLibrary", menuName = "TileLibrary", order = 1)]    
+    [CreateAssetMenu(fileName = "TileLibrary", menuName = "XR-World/TileLibrary", order = 1)]    
     public class TileLibrary : ScriptableObject
     {
         [SerializeField] private LevelData.SkinType _skinType;
@@ -13,7 +13,7 @@ namespace XRWorld.Core
         [Tooltip("Make sure the array order follows the declared enum order")] [SerializeField]
         private Material[] _groundTypes;
 
-        public GameObject[] placeableObjects;
+        public PlaceableObjectCollection[] placeableObjects;
         
         public Material GetMaterial(int indexID)
         {

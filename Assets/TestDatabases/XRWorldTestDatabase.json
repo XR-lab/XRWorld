@@ -7,8 +7,8 @@
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": -1,
-        "level": 1,
+        "id": 0,
+        "level": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -19,7 +19,7 @@
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": -1,
+        "id": 0,
         "level": 1,
         "placedBy": "Richard Test user",
         "timestamp": ""
