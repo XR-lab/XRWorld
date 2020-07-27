@@ -14,23 +14,35 @@ namespace XRWorld.Interaction
         [SerializeField] private TileLibrary _tileLibrary;
         private Renderer _renderer;
 
-        private TileSelector _tileSelector;
+        public TileSelector _tileSelector;
         private Tile _tile;
         public TileData _newTile;
         private void Awake()
         {
-            _tileSelector = GetComponent<TileSelector>();
             _tile = GetComponent<Tile>();
-        }
+           
 
-        public void ChangeTile()
+        }
+        
+        public void ChangeTileGrass()
         {
-             
+            _newTile.groundType = TileData.GroundType.Grass;
             _tile = _tileSelector._selectedTile;
             _tile.SetTileData(_newTile,_tileLibrary);
-            
 
-            
+        }
+        public void ChangeTileStone()
+        {
+            _newTile.groundType = TileData.GroundType.Stone;
+            _tile = _tileSelector._selectedTile;
+            _tile.SetTileData(_newTile,_tileLibrary);
+
+        }
+        public void ChangeTileWater()
+        {
+            _newTile.groundType = TileData.GroundType.Water;
+            _tile = _tileSelector._selectedTile;
+            _tile.SetTileData(_newTile,_tileLibrary);
 
         }
 

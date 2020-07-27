@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager.UI;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using XRWorld.Core;
 
