@@ -27,7 +27,6 @@ namespace XRWorld.Core
         public void SetTileData(TileData tileData, TileLibrary tileLibrary)
         {
             _tileData = tileData;
-            
             _renderer.material = tileLibrary.GetMaterial((int)tileData.groundType);
         }
     }
