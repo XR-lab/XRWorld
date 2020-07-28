@@ -45,6 +45,14 @@ namespace XRWorld.Interaction
             _tile.SetTileData(_newTile,_tileLibrary);
 
         }
+        public void SetPlant()
+        {
+            _newTile.placeableObjectData.id = -1;
+            _newTile.placeableObjectData.level = 1;
+            _tile = _tileSelector._selectedTile;
+            _tile.SetTileData(_newTile,_tileLibrary);
+
+        }
 
     }
 }
