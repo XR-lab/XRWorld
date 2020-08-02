@@ -47,10 +47,11 @@ namespace XRWorld.Interaction
         }
         public void SetPlant()
         {
-            _newTile.placeableObjectData.id = 1;
-            _newTile.placeableObjectData.level = 1;
+            _newTile.placeableObjectData.id = 0;
+            _newTile.placeableObjectData.level = 2;
             _tile = _tileSelector._selectedTile;
             _tile.SetObjectData(_newTile.placeableObjectData,_tileLibrary);
+            
 
         }
 

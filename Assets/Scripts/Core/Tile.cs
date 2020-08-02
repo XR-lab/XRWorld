@@ -33,9 +33,16 @@ namespace XRWorld.Core
         public void SetObjectData(PlaceableObjectData placeAbleObjectData, TileLibrary tileLibrary)
         {
             _tileData.placeableObjectData.id = placeAbleObjectData.id;
-             tileLibrary.GetObject((int)placeAbleObjectData.id);
-             Debug.Log("hi");
-            
+            //summon plant
+         
+            Vector3 spawnableObjectPosition = PlaceableObjectSpawnPoint;
+            PlaceableObjectCollection collection =
+                tileLibrary.placeableObjects[_tileData.placeableObjectData.id];
+            GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
+                    
+            Instantiate(objectToSpawn, spawnableObjectPosition,
+                Quaternion.identity, _placeableObjectSpawnpoint.transform);
+            Debug.Log("hi");
         }
     }
     

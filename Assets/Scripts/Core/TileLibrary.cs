@@ -19,10 +19,6 @@ namespace XRWorld.Core
         {
             return _groundTypes[indexID];
         }
-        public PlaceableObjectCollection GetObject(int indexID)
-        {
-            return placeableObjects[indexID];
-        }
     } 
     } 
 
