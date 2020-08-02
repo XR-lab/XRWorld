@@ -11,7 +11,8 @@ namespace XRWorld.Core
         // data visualized for debuggin purpose
         [SerializeField] private Transform _placeableObjectSpawnpoint;
         [SerializeField] private TileData _tileData;
-      
+
+
         public Vector3 PlaceableObjectSpawnPoint
         {
             get { return _placeableObjectSpawnpoint.position; }
@@ -28,6 +29,13 @@ namespace XRWorld.Core
         {
             _tileData = tileData;
             _renderer.material = tileLibrary.GetMaterial((int)tileData.groundType);
+        }
+        public void SetObjectData(PlaceableObjectData placeAbleObjectData, TileLibrary tileLibrary)
+        {
+            _tileData.placeableObjectData.id = placeAbleObjectData.id;
+             tileLibrary.GetObject((int)placeAbleObjectData.id);
+             Debug.Log("hi");
+            
         }
     }
     
