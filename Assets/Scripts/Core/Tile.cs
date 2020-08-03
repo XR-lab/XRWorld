@@ -11,7 +11,7 @@ namespace XRWorld.Core
         // data visualized for debuggin purpose
         [SerializeField] private Transform _placeableObjectSpawnpoint;
         [SerializeField] private TileData _tileData;
-
+        private MoneySystem moneySystem;
 
         public Vector3 PlaceableObjectSpawnPoint
         {
@@ -23,6 +23,7 @@ namespace XRWorld.Core
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
+            moneySystem = GameObject.Find ("AR Session Origin").GetComponent<MoneySystem> ();
         }
         public void SetGroundData(TileData.GroundType groundType, TileLibrary tileLibrary)
         {
@@ -36,11 +37,14 @@ namespace XRWorld.Core
         }
         public void SetObjectData(PlaceableObjectData placeAbleObjectData, TileLibrary tileLibrary)
         {
-            _tileData.placeableObjectData.id = placeAbleObjectData.id;
-            _tileData.placeableObjectData.level = placeAbleObjectData.level;
             //summon plant
-            if (_tileData.HasPlaceableObject)
+            print(_tileData.HasPlaceableObject);
+            if (!_tileData.HasPlaceableObject && moneySystem.playerMoney >= placeAbleObjectData.cost)
             {
+                _tileData.placeableObjectData = placeAbleObjectData;
+                
+                print(_tileData.HasPlaceableObject);
+                moneySystem.RemovePlayerMoney(placeAbleObjectData.cost);
                 Vector3 spawnableObjectPosition = PlaceableObjectSpawnPoint;
                 PlaceableObjectCollection collection =
                     tileLibrary.placeableObjects[_tileData.placeableObjectData.id];
@@ -48,6 +52,10 @@ namespace XRWorld.Core
                     
                 Instantiate(objectToSpawn, spawnableObjectPosition,
                     Quaternion.identity, _placeableObjectSpawnpoint.transform);
+            }
+            else
+            {
+                Debug.Log("Not Enough Money");
             }
         }
     }
@@ -66,6 +74,7 @@ namespace XRWorld.Core
         public int posX;
         public int posZ;
         public PlaceableObjectData placeableObjectData;
+        
 
         public bool HasPlaceableObject
         {
@@ -76,6 +85,7 @@ namespace XRWorld.Core
     [Serializable]
     public struct PlaceableObjectData
     {
+        public int cost;
         public int id;
         public int level;
         public string placedBy;

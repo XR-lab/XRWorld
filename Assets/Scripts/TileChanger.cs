@@ -13,9 +13,9 @@ namespace XRWorld.Interaction
     {
         [SerializeField] private TileLibrary _tileLibrary;
         private Renderer _renderer;
-
         public TileSelector _tileSelector;
         private Tile _tile;
+        public int cost;
         //public TileData.GroundType groundType;
        // public PlaceableObjectData objectToPlace;
         private void Awake()
@@ -37,8 +37,10 @@ namespace XRWorld.Interaction
         {
             // TODO: Fix timestamp and read username
             PlaceableObjectData newObject = new PlaceableObjectData();
+            
             newObject.id = objectToPlaceIndex;
             newObject.level = 0;
+            newObject.cost = cost;
             newObject.placedBy = "User name";
             _tile = _tileSelector._selectedTile;
             _tile.SetObjectData( newObject,_tileLibrary);

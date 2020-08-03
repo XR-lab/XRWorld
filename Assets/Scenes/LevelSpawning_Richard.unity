@@ -770,7 +770,7 @@ Canvas:
   m_GameObject: {fileID: 298550135}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 420375108}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
@@ -790,8 +790,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298550135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 0.10691672, y: 0.10691672, z: 0.10691672}
   m_Children:
   - {fileID: 182062804}
   m_Father: {fileID: 0}
@@ -800,8 +800,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920.0001, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!20 &420375108 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1606609850183006024, guid: daaa29916250e00439dd899bb000cd2b,
