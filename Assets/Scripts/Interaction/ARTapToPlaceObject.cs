@@ -22,14 +22,19 @@ namespace XRWorld.Interaction
         private bool _placementPoseIsValid = false;
         public bool isPlaced = false;
 
+        private LevelData _levelData;
+
         void Start()
         {
             _jsonParser = FindObjectOfType<JSONParser>();
             _levelSpawner = FindObjectOfType<LevelSpawner>();
             _raycastManager = FindObjectOfType<ARRaycastManager>();
-            
+
             if (_runInEditor)
-                PlaceObject();
+            {
+                FindObjectOfType<FirebaseLevelLoader>().OnLevelLoaded.AddListener(SetLevelData);
+            }
+                
         }
 
         void Update()
@@ -37,7 +42,7 @@ namespace XRWorld.Interaction
             UpdatePlacementPose();
             UpdatePlacementIndicator();
 
-            if (Input.touchCount > 0 && isPlaced == false )
+            if (Input.touchCount > 0 && isPlaced == false)
             {
                 PlaceObject();
             }
@@ -47,7 +52,7 @@ namespace XRWorld.Interaction
         private void PlaceObject()
         {
             LevelData data = _jsonParser.ParseJSONToLevelData();
-
+           // _levelData = data;
             Vector3 spawnPosition = _placementPose.position;
             
             // place object, in ok position when we test in editor...
@@ -60,6 +65,14 @@ namespace XRWorld.Interaction
             enabled = false;
         }
 
+        public void SetLevelData(LevelData data)
+        {
+            Debug.Log("Updated Level Data");
+            _levelData = data;
+            Debug.Log(data.tiles[1].groundType);
+            _levelSpawner.SpawnLevel(_levelData, new Vector3(-2,-3,6), Quaternion.identity );
+           //PlaceObject();
+        }
         private void UpdatePlacementIndicator()
         {
             if (_placementPoseIsValid)
