@@ -16,7 +16,8 @@ namespace XRWorld.Interaction
 
         public TileSelector _tileSelector;
         private Tile _tile;
-        public TileData _newTile;
+        //public TileData.GroundType groundType;
+       // public PlaceableObjectData objectToPlace;
         private void Awake()
         {
             _tile = GetComponent<Tile>();
@@ -24,33 +25,23 @@ namespace XRWorld.Interaction
 
         }
         
-        public void ChangeTileGrass()
+        public void ChangeGroundType(int groundTypeID)
         {
-            _newTile.groundType = TileData.GroundType.Grass;
+            TileData.GroundType groundType = (TileData.GroundType)groundTypeID;
             _tile = _tileSelector._selectedTile;
-            _tile.SetTileData(_newTile,_tileLibrary);
+            _tile.SetGroundData(groundType,_tileLibrary);
 
         }
-        public void ChangeTileStone()
-        {
-            _newTile.groundType = TileData.GroundType.Stone;
-            _tile = _tileSelector._selectedTile;
-            _tile.SetTileData(_newTile,_tileLibrary);
 
-        }
-        public void ChangeTileWater()
+        public void SetPlaceableObject(int objectToPlaceIndex)
         {
-            _newTile.groundType = TileData.GroundType.Water;
+            // TODO: Fix timestamp and read username
+            PlaceableObjectData newObject = new PlaceableObjectData();
+            newObject.id = objectToPlaceIndex;
+            newObject.level = 0;
+            newObject.placedBy = "User name";
             _tile = _tileSelector._selectedTile;
-            _tile.SetTileData(_newTile,_tileLibrary);
-
-        }
-        public void SetPlant()
-        {
-            _newTile.placeableObjectData.id = 0;
-            _newTile.placeableObjectData.level = 2;
-            _tile = _tileSelector._selectedTile;
-            _tile.SetObjectData(_newTile.placeableObjectData,_tileLibrary);
+            _tile.SetObjectData( newObject,_tileLibrary);
             
 
         }

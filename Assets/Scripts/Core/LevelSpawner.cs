@@ -32,7 +32,7 @@ namespace XRWorld.Core
                 Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
                 tile.SetTileData(tileData, _tileLibrary);
                 
-                if (tileData.placeableObjectData.id > -1)
+                if (tileData.HasPlaceableObject)
                 {
                     Vector3 spawnableObjectPosition = tile.PlaceableObjectSpawnPoint;
                     PlaceableObjectCollection collection =

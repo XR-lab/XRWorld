@@ -24,7 +24,11 @@ namespace XRWorld.Core
         {
             _renderer = GetComponent<Renderer>();
         }
-
+        public void SetGroundData(TileData.GroundType groundType, TileLibrary tileLibrary)
+        {
+            _tileData.groundType = groundType;
+            _renderer.material = tileLibrary.GetMaterial((int)groundType);
+        }
         public void SetTileData(TileData tileData, TileLibrary tileLibrary)
         {
             _tileData = tileData;
@@ -33,16 +37,18 @@ namespace XRWorld.Core
         public void SetObjectData(PlaceableObjectData placeAbleObjectData, TileLibrary tileLibrary)
         {
             _tileData.placeableObjectData.id = placeAbleObjectData.id;
+            _tileData.placeableObjectData.level = placeAbleObjectData.level;
             //summon plant
-         
-            Vector3 spawnableObjectPosition = PlaceableObjectSpawnPoint;
-            PlaceableObjectCollection collection =
-                tileLibrary.placeableObjects[_tileData.placeableObjectData.id];
-            GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
+            if (_tileData.HasPlaceableObject)
+            {
+                Vector3 spawnableObjectPosition = PlaceableObjectSpawnPoint;
+                PlaceableObjectCollection collection =
+                    tileLibrary.placeableObjects[_tileData.placeableObjectData.id];
+                GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
                     
-            Instantiate(objectToSpawn, spawnableObjectPosition,
-                Quaternion.identity, _placeableObjectSpawnpoint.transform);
-            Debug.Log("hi");
+                Instantiate(objectToSpawn, spawnableObjectPosition,
+                    Quaternion.identity, _placeableObjectSpawnpoint.transform);
+            }
         }
     }
     
@@ -60,6 +66,11 @@ namespace XRWorld.Core
         public int posX;
         public int posZ;
         public PlaceableObjectData placeableObjectData;
+
+        public bool HasPlaceableObject
+        {
+            get { return placeableObjectData.id > -1; }
+        }
     }
 
     [Serializable]

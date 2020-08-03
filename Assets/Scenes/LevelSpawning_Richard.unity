@@ -253,15 +253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1677627813}
-  _newTile:
-    groundType: 0
-    posX: 0
-    posZ: 0
-    placeableObjectData:
-      id: 0
-      level: 0
-      placedBy: 
-      timeStamp: 
 --- !u!114 &96991324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,12 +297,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 96991323}
-        m_MethodName: ChangeTileStone
-        m_Mode: 1
+        m_MethodName: ChangeGroundType
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -473,15 +464,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1677627813}
-  _newTile:
-    groundType: 0
-    posX: 0
-    posZ: 0
-    placeableObjectData:
-      id: 0
-      level: 0
-      placedBy: 
-      timeStamp: 
 --- !u!114 &163248288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,12 +508,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 163248287}
-        m_MethodName: ChangeTileWater
-        m_Mode: 1
+        m_MethodName: ChangeGroundType
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -660,8 +642,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 182062808}
-        m_MethodName: ChangeTileGrass
-        m_Mode: 1
+        m_MethodName: ChangeGroundType
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -721,15 +703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1677627813}
-  _newTile:
-    groundType: 0
-    posX: 0
-    posZ: 0
-    placeableObjectData:
-      id: 0
-      level: 0
-      placedBy: 
-      timeStamp: 
 --- !u!1 &298550135
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +773,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 420375108}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -928,7 +901,7 @@ GameObject:
   - component: {fileID: 591227742}
   - component: {fileID: 591227741}
   m_Layer: 5
-  m_Name: Water (1)
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -968,15 +941,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1677627813}
-  _newTile:
-    groundType: 0
-    posX: 0
-    posZ: 0
-    placeableObjectData:
-      id: 0
-      level: 0
-      placedBy: 
-      timeStamp: 
 --- !u!114 &591227742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,8 +985,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 591227741}
-        m_MethodName: SetPlant
-        m_Mode: 1
+        m_MethodName: SetPlaceableObject
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
