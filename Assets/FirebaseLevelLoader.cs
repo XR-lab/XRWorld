@@ -16,6 +16,7 @@ public class FirebaseLevelLoader : MonoBehaviour
     {
     }
 
+    public TileLibrary tileLibrary;
     public UnityLevelDataEvent OnLevelLoaded;
     private const string LEVEL_KEY = "LEVEL_KEY";
 
@@ -24,6 +25,9 @@ public class FirebaseLevelLoader : MonoBehaviour
     {
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://xr-world.firebaseio.com/");
         _reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        var tileRef = FirebaseDatabase.DefaultInstance.GetReference(LEVEL_KEY + "/tiles");
+        tileRef.ChildChanged += HandleChildChanged;
     }
 
     public void LoadLevelData()
@@ -43,5 +47,20 @@ public class FirebaseLevelLoader : MonoBehaviour
                 OnLevelLoaded.Invoke(levelData);
             }
         });
+    }
+
+    // TODO: Filter the changed data to make specific changes
+    void HandleChildChanged(object sender, ChildChangedEventArgs args)
+    {
+        if (args.DatabaseError != null)
+        {
+            Debug.LogError(args.DatabaseError.Message);
+            return;
+        }
+
+        TileData data = JsonUtility.FromJson<TileData>(args.Snapshot.GetRawJsonValue());
+        Tile changedTile = FindObjectOfType<LevelSpawner>().tiles[Int32.Parse(args.Snapshot.Key)];
+        changedTile.SetTileData(data, tileLibrary);
+        //FindObjectOfType<LevelSpawner>().tiles[args.Snapshot.Key].SetTileData(JsonUtility.FromJson<TileData>(args.Snapshot.GetRawJsonValue()));
     }
 }

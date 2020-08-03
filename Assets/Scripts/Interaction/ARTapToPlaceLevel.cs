@@ -8,14 +8,13 @@ using XRWorld.Database;
 
 namespace XRWorld.Interaction
 {
-    public class ARTapToPlaceObject : MonoBehaviour
+    public class ARTapToPlaceLevel : MonoBehaviour
     {
         // for debugging purpose so we can easily run in editor
         [SerializeField] private bool _runInEditor;
         
         public GameObject placementIndicator;
         
-        private JSONParser _jsonParser;
         private LevelSpawner _levelSpawner;
         private ARRaycastManager _raycastManager;
         private Pose _placementPose;
@@ -26,15 +25,8 @@ namespace XRWorld.Interaction
 
         void Start()
         {
-            _jsonParser = FindObjectOfType<JSONParser>();
             _levelSpawner = FindObjectOfType<LevelSpawner>();
             _raycastManager = FindObjectOfType<ARRaycastManager>();
-
-            if (_runInEditor)
-            {
-                FindObjectOfType<FirebaseLevelLoader>().OnLevelLoaded.AddListener(SetLevelData);
-            }
-                
         }
 
         void Update()
@@ -44,35 +36,25 @@ namespace XRWorld.Interaction
 
             if (Input.touchCount > 0 && isPlaced == false)
             {
-                PlaceObject();
+                PlaceLevel();
             }
 
         }
 
-        private void PlaceObject()
+        private void PlaceLevel()
         {
-            LevelData data = _jsonParser.ParseJSONToLevelData();
-           // _levelData = data;
             Vector3 spawnPosition = _placementPose.position;
             
             // place object, in ok position when we test in editor...
             if (_runInEditor)
                 spawnPosition = new Vector3(-2, -3, 6);
                 
-            _levelSpawner.SpawnLevel(data, spawnPosition, _placementPose.rotation);
+            _levelSpawner.SpawnLevel(_levelData, spawnPosition, _placementPose.rotation);
             isPlaced = true;
             placementIndicator.SetActive(false);
             enabled = false;
         }
 
-        public void SetLevelData(LevelData data)
-        {
-            Debug.Log("Updated Level Data");
-            _levelData = data;
-            Debug.Log(data.tiles[1].groundType);
-            _levelSpawner.SpawnLevel(_levelData, new Vector3(-2,-3,6), Quaternion.identity );
-           //PlaceObject();
-        }
         private void UpdatePlacementIndicator()
         {
             if (_placementPoseIsValid)
@@ -101,6 +83,14 @@ namespace XRWorld.Interaction
                 var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
                 _placementPose.rotation = Quaternion.LookRotation(cameraBearing);
             }
+        }
+        
+        // Invoked via unity event
+        public void SetLevelData(LevelData data)
+        {
+            _levelData = data;
+            if (_runInEditor)
+                PlaceLevel();
         }
     }
 }

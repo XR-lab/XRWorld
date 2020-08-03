@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace XRWorld.Core
 {
@@ -10,8 +11,12 @@ namespace XRWorld.Core
         [SerializeField] private float _maxHeightOffset = 0.25f;
         [SerializeField] private float _heightTiers = 4;
 
+        public List<Tile> tiles;
+
         public void SpawnLevel(LevelData levelData, Vector3 placementPosition, Quaternion placementRotation)
         {
+            tiles = new List<Tile>();
+            
             float scaledHeightStep = _maxHeightOffset / (_heightTiers - 1);
             float unscaledHeightStep = 1f / _heightTiers;
             Vector2 levelSize = levelData.GetMaxLevelSize();
@@ -31,6 +36,8 @@ namespace XRWorld.Core
                 Vector3 spawnPosition = new Vector3(tileData.posX, yOffset, tileData.posZ);
                 Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
                 tile.SetTileData(tileData, _tileLibrary);
+                
+                tiles.Add(tile);
                 
                 if (tileData.placeableObjectData.id > -1)
                 {
