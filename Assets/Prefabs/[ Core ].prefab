@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ecc18a2d8984941ba3ba324ae1c0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _runInEditor: 1
   placementIndicator: {fileID: 3227186343799495070}
   isPlaced: 0
 --- !u!114 &1606609851034241766
@@ -283,6 +284,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1606609851360761664}
+  - component: {fileID: 1878103371830318422}
+  - component: {fileID: 201545512723985515}
+  - component: {fileID: 8745320586601418648}
   m_Layer: 0
   m_Name: '[ Core ]'
   m_TagString: Untagged
@@ -308,6 +312,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1878103371830318422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606609851360761671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c59a19fac09434e8cd1c044d5d3c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentSkinType: 0
+  _tileLibraries:
+  - {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
+--- !u!114 &201545512723985515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606609851360761671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95895f4ad3c882442a626ddf43675316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnFirebaseInitialize:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8745320586601418648}
+        m_MethodName: LoadLevelData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8745320586601418648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606609851360761671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b26a443354ad0449481bc5f29ac88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnLevelLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1606609851034241761}
+        m_MethodName: SetLevelData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1606609851962088598
 GameObject:
   m_ObjectHideFlags: 0

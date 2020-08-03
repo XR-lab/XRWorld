@@ -8,7 +8,10 @@ namespace XRWorld.Core
     public class TileLibrary : ScriptableObject
     {
         [SerializeField] private LevelData.SkinType _skinType;
-        
+        public LevelData.SkinType SkinType
+        {
+            get { return _skinType; }
+        }
         //TODO: Editor tool, edit enum based on skinType
         [Tooltip("Make sure the array order follows the declared enum order")] [SerializeField]
         private Material[] _groundTypes;

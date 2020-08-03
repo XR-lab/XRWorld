@@ -15,19 +15,35 @@ public class FirebaseLevelLoader : MonoBehaviour
     public class UnityLevelDataEvent : UnityEvent<LevelData>
     {
     }
-
-    public TileLibrary tileLibrary;
+    
     public UnityLevelDataEvent OnLevelLoaded;
     private const string LEVEL_KEY = "LEVEL_KEY";
+    private const string TILES_REF = "LEVEL_KEY/tiles";
 
     private DatabaseReference _reference;
-    private void Start()
+    private DatabaseReference _tilesReference;
+
+    private TileCollection _tileCollection;
+    private void Awake()
     {
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://xr-world.firebaseio.com/");
         _reference = FirebaseDatabase.DefaultInstance.RootReference;
+        _tilesReference = FirebaseDatabase.DefaultInstance.GetReference(TILES_REF);
+    }
 
-        var tileRef = FirebaseDatabase.DefaultInstance.GetReference(LEVEL_KEY + "/tiles");
-        tileRef.ChildChanged += HandleChildChanged;
+    private void Start()
+    {
+        _tileCollection = FindObjectOfType<TileCollection>();
+    }
+
+    private void OnEnable()
+    {
+        _tilesReference.ChildChanged += HandleChildChanged;
+    }
+
+    private void OnDisable()
+    {
+        _tilesReference.ChildChanged -= HandleChildChanged;
     }
 
     public void LoadLevelData()
@@ -49,7 +65,7 @@ public class FirebaseLevelLoader : MonoBehaviour
         });
     }
 
-    // TODO: Filter the changed data to make specific changes
+    // TODO: Filter the changed data to make specific changes related to the tiles
     void HandleChildChanged(object sender, ChildChangedEventArgs args)
     {
         if (args.DatabaseError != null)
@@ -58,9 +74,19 @@ public class FirebaseLevelLoader : MonoBehaviour
             return;
         }
 
-        TileData data = JsonUtility.FromJson<TileData>(args.Snapshot.GetRawJsonValue());
-        Tile changedTile = FindObjectOfType<LevelSpawner>().tiles[Int32.Parse(args.Snapshot.Key)];
-        changedTile.SetTileData(data, tileLibrary);
-        //FindObjectOfType<LevelSpawner>().tiles[args.Snapshot.Key].SetTileData(JsonUtility.FromJson<TileData>(args.Snapshot.GetRawJsonValue()));
+        TileData newData = JsonUtility.FromJson<TileData>(args.Snapshot.GetRawJsonValue());
+        Tile changedTile = _tileCollection.GetTileByID(Int32.Parse(args.Snapshot.Key));
+        TileData currentData = changedTile.TileData;
+        
+        if (currentData.groundType != newData.groundType)
+        {
+            //changedTile.SetTileData(newData);
+            changedTile.SetGroundType(newData.groundType);
+        } 
+        if (currentData.placeableObjectData.id == -1 && newData.placeableObjectData.id > -1)
+        {
+            // instantiate the new placeable object
+            changedTile.AddPlaceableObject(newData.placeableObjectData.id);
+        }
     }
 }

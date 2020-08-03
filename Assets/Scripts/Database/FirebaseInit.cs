@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 public class FirebaseInit : MonoBehaviour
 {
-   public UnityEvent OnFirebaseInitializd = new UnityEvent();
+   public UnityEvent OnFirebaseInitialize = new UnityEvent();
    private void Start()
    { 
       FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
@@ -17,7 +17,7 @@ public class FirebaseInit : MonoBehaviour
               Debug.LogError($"Failed to initialize Firebase with {task.Exception}");
               return;
           }
-          OnFirebaseInitializd.Invoke();
+          OnFirebaseInitialize.Invoke();
       });
    }
 }
