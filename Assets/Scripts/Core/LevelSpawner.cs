@@ -35,7 +35,11 @@ namespace XRWorld.Core
                 if (tileData.placeableObjectData.id > -1)
                 {
                     Vector3 spawnableObjectPosition = tile.PlaceableObjectSpawnPoint;
-                    Instantiate(_tileLibrary.placeableObjects[tileData.placeableObjectData.id], spawnableObjectPosition,
+                    PlaceableObjectCollection collection =
+                        _tileLibrary.placeableObjects[tileData.placeableObjectData.id];
+                    GameObject objectToSpawn = collection.GetGameObjectByLevel(tileData.placeableObjectData.level);
+                    
+                    Instantiate(objectToSpawn, spawnableObjectPosition,
                         Quaternion.identity, tile.transform);
                 }
             }
