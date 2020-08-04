@@ -188,34 +188,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[ Core ]'
       objectReference: {fileID: 0}
-    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: _databaseFile
-      value: 
-      objectReference: {fileID: 4900000, guid: a48a1ddabe3940668e9a12b1f350b62d, type: 3}
-    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: _sendLocalDatabaseToServer
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4334710252130491090, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
---- !u!1 &849616044 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4334710252130491084, guid: daaa29916250e00439dd899bb000cd2b,
-    type: 3}
-  m_PrefabInstance: {fileID: 544151898}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &849616047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849616044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d96e20f4280347a494798cf501e191f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
