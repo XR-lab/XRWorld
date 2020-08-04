@@ -44,7 +44,7 @@ namespace XRWorld.Interaction
 
         }
 
-        private void PlaceObject()
+        public void PlaceObject()
         {
             LevelData data = _jsonParser.ParseJSONToLevelData();
 
