@@ -221,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1606609851034241767}
   cost: 0
 --- !u!1 &109530492
@@ -513,7 +512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1606609851034241767}
   cost: 0
 --- !u!1 &182062803
@@ -662,7 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1606609851034241767}
   cost: 0
 --- !u!1 &298550135
@@ -907,7 +904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1606609851034241767}
   cost: 0
 --- !u!1 &626619951
@@ -1544,9 +1540,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1606609851360761664}
-  - component: {fileID: 1878103371830318422}
-  - component: {fileID: 201545512723985515}
-  - component: {fileID: 8745320586601418648}
+  - component: {fileID: 7447891577429605815}
+  - component: {fileID: 5873533810719075457}
+  - component: {fileID: 3043865692908766797}
   m_Layer: 0
   m_Name: '[ Core ]'
   m_TagString: Untagged
@@ -1575,7 +1571,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1878103371830318422
+--- !u!114 &7447891577429605815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1590,7 +1586,7 @@ MonoBehaviour:
   _currentSkinType: 0
   _tileLibraries:
   - {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
---- !u!114 &201545512723985515
+--- !u!114 &5873533810719075457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1605,7 +1601,7 @@ MonoBehaviour:
   OnFirebaseInitialize:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8745320586601418648}
+      - m_Target: {fileID: 3043865692908766797}
         m_MethodName: LoadLevelData
         m_Mode: 1
         m_Arguments:
@@ -1616,7 +1612,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8745320586601418648
+--- !u!114 &3043865692908766797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

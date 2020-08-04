@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace XRWorld.Core
 {
+    [RequireComponent(typeof(TileCollection))]
     public class LevelSpawner : MonoBehaviour
     {
         [SerializeField] private Tile _tilePrefab;
@@ -9,13 +11,39 @@ namespace XRWorld.Core
 
         [SerializeField] private float _maxHeightOffset = 0.25f;
         [SerializeField] private float _heightTiers = 4;
-        
+
+        private TileCollection _tileCollection;
+        private void Start()
+        {
+            _tileCollection = GetComponent<TileCollection>();
+        }
+
         public void SpawnLevel(LevelData levelData, Vector3 placementPosition, Quaternion placementRotation)
         {
             float scaledHeightStep = _maxHeightOffset / (_heightTiers - 1);
             float unscaledHeightStep = 1f / _heightTiers;
             Vector2 levelSize = levelData.GetMaxLevelSize();
- 
+            TileData[] tiles = levelData.tiles;
+            
+            for (int i = 0; i < tiles.Length; i++)
+            {
+                float yOffset = Mathf.PerlinNoise(tiles[i].posX / levelSize.x, tiles[i].posZ / levelSize.y);
+                
+                for (int j = 0; j < _heightTiers; j++)
+                {
+                    if (yOffset >= unscaledHeightStep * j && yOffset < unscaledHeightStep * (j+1))
+                    {
+                        yOffset = scaledHeightStep * j;
+                    }
+                }
+                
+                Vector3 spawnPosition = new Vector3(tiles[i].posX, yOffset, tiles[i].posZ);
+                Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
+                tile.SetTileData(tiles[i], i);
+
+                _tileCollection.AddTile(tile);
+            }
+            /*
             foreach (var tileData in levelData.tiles)
             {
                 float yOffset = Mathf.PerlinNoise(tileData.posX / levelSize.x, tileData.posZ / levelSize.y);
@@ -30,19 +58,11 @@ namespace XRWorld.Core
                 
                 Vector3 spawnPosition = new Vector3(tileData.posX, yOffset, tileData.posZ);
                 Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
-                tile.SetTileData(tileData, _tileLibrary);
+                tile.SetTileData(tileData);
                 
-                if (tileData.HasPlaceableObject)
-                {
-                    Vector3 spawnableObjectPosition = tile.PlaceableObjectSpawnPoint;
-                    PlaceableObjectCollection collection =
-                        _tileLibrary.placeableObjects[tileData.placeableObjectData.id];
-                    GameObject objectToSpawn = collection.GetGameObjectByLevel(tileData.placeableObjectData.level);
-                    
-                    Instantiate(objectToSpawn, spawnableObjectPosition,
-                        Quaternion.identity, tile.transform);
-                }
+                _tileCollection.AddTile(tile, tileData);
             }
+            */
 
             // adjust spawner position offset, to center spawnpostion of level. Might not need this in AR.
             transform.position = placementPosition;

@@ -82,11 +82,12 @@ public class FirebaseLevelLoader : MonoBehaviour
         {
             //changedTile.SetTileData(newData);
             changedTile.SetGroundType(newData.groundType);
+            Debug.Log("Change From Server");
         } 
         if (currentData.placeableObjectData.id == -1 && newData.placeableObjectData.id > -1)
         {
             // instantiate the new placeable object
-            changedTile.AddPlaceableObject(newData.placeableObjectData.id);
+            changedTile.AddPlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
         }
     }
 }

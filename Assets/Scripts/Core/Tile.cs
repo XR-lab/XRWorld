@@ -13,8 +13,17 @@ namespace XRWorld.Core
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
 
+        private int _ID;
+        public int ID
+        {
+            get { return _ID; }
+        }
         public TileData TileData => _tileData;
-
+   
+        public bool HasPlaceableObject
+        {
+            get { return _tileData.placeableObjectData.id > -1; }
+        }
         public Vector3 PlaceableObjectSpawnPoint
         {
             get { return _placeableObjectSpawnpoint.position; }
@@ -27,35 +36,38 @@ namespace XRWorld.Core
             _renderer = GetComponent<Renderer>();
         }
 
-        public void SetTileData(TileData tileData)
+        public void SetTileData(TileData tileData, int tileID)
         {
+            _ID = tileID;
             _tileData = tileData;
             
             SetGroundType(_tileData.groundType);
 
-            if (_tileData.placeableObjectData.id > -1)
+            if (HasPlaceableObject)
             {
-                AddPlaceableObject(_tileData.placeableObjectData.id);
+                AddPlaceableObject(_tileData.placeableObjectData.id, _tileData.placeableObjectData.level);
             }
         }
 
         public void SetGroundType(TileData.GroundType newType)
         {
-            var tileLibrary = SkinResources.Instance.GetTileLibrary();
             _tileData.groundType = newType;
+            var tileLibrary = SkinResources.Instance.GetTileLibrary();
             _renderer.material = tileLibrary.GetMaterial((int)_tileData.groundType);
+            
         }
-        
-        public void AddPlaceableObject(int placeableObjectID)
+
+        public void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel)
         {
+            _tileData.placeableObjectData.id = placeableObjectID;
+            _tileData.placeableObjectData.level = placeableObjectLevel;
+            
             Vector3 spawnableObjectPosition = _placeableObjectSpawnpoint.position;
             TileLibrary tileLibrary = SkinResources.Instance.GetTileLibrary();
-            PlaceableObjectCollection collection = tileLibrary.placeableObjects[placeableObjectID];
+            PlaceableObjectCollection collection = tileLibrary.placeableObjects[_tileData.placeableObjectData.id];
             GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
             
             Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform);
-
-            _tileData.placeableObjectData.id = placeableObjectID;
         }
     }
     
