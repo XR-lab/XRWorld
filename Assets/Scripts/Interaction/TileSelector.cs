@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using XRWorld.Core;
+using XRWorld.Core.Tiles;
 
 namespace XRWorld.Interaction
 {

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace XRWorld.Core
+namespace XRWorld.Assets
 {
     [CreateAssetMenu(fileName = "PlaceableObjectCollection", menuName = "XR-World/PlaceableObjectCollection", order = 1)]
     public class PlaceableObjectCollection : ScriptableObject

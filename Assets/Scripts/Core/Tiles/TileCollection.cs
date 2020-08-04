@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace XRWorld.Core
+namespace XRWorld.Core.Tiles
 {
     public class TileCollection : MonoBehaviour
     {

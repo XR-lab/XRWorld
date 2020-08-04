@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using XRWorld.Database;
+using XRWorld.Assets;
 
-namespace XRWorld.Core
+namespace XRWorld.Core.Tiles
 {
     public class Tile : MonoBehaviour
     {
@@ -63,8 +61,8 @@ namespace XRWorld.Core
             _tileData.placeableObjectData.level = placeableObjectLevel;
             
             Vector3 spawnableObjectPosition = _placeableObjectSpawnpoint.position;
-            TileLibrary tileLibrary = SkinResources.Instance.GetTileLibrary();
-            PlaceableObjectCollection collection = tileLibrary.placeableObjects[_tileData.placeableObjectData.id];
+            SkinLibrary skinLibrary = SkinResources.Instance.GetTileLibrary();
+            PlaceableObjectCollection collection = skinLibrary.placeableObjects[_tileData.placeableObjectData.id];
             GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
             
             Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform);

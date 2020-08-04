@@ -1,5 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using XRWorld.Assets;
+using XRWorld.Core.Tiles;
 
 namespace XRWorld.Core
 {
@@ -7,7 +8,7 @@ namespace XRWorld.Core
     public class LevelSpawner : MonoBehaviour
     {
         [SerializeField] private Tile _tilePrefab;
-        [SerializeField] private TileLibrary _tileLibrary;
+        [SerializeField] private SkinLibrary _tileLibrary;
 
         [SerializeField] private float _maxHeightOffset = 0.25f;
         [SerializeField] private float _heightTiers = 4;

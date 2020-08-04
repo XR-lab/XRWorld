@@ -1,11 +1,10 @@
-﻿using System.Runtime.InteropServices;
-using UnityEngine;
-using XRWorld.Database;
+﻿using UnityEngine;
+using XRWorld.Core;
 
-namespace XRWorld.Core
+namespace XRWorld.Assets
 {
     [CreateAssetMenu(fileName = "TileLibrary", menuName = "XR-World/TileLibrary", order = 1)]    
-    public class TileLibrary : ScriptableObject
+    public class SkinLibrary : ScriptableObject
     {
         [SerializeField] private LevelData.SkinType _skinType;
         public LevelData.SkinType SkinType
