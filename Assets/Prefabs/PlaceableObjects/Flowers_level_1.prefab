@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1375984085786443089}
   - component: {fileID: 5316848158899051062}
   m_Layer: 0
-  m_Name: Flowers
+  m_Name: Flowers_level_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1793488454892844606, guid: a6bd9de67be5bf04180b89357aee449e, type: 3}
+  - {fileID: 2100000, guid: 2671cda9d91551141801f48d32dd2c31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
