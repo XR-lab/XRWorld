@@ -27,8 +27,10 @@ namespace XRWorld.Interaction
         {
             TileData.GroundType groundType = (TileData.GroundType)groundTypeID;
             _tile = _tileSelector._selectedTile;
+            
             //_tile.SetGroundType(groundType);
 
+            // we're making a server change which gets send to all clients 
             string reference = String.Concat(_tile.ID, "/groundType");
             _reference.Child(reference).SetValueAsync(groundTypeID);
         }
@@ -45,9 +47,18 @@ namespace XRWorld.Interaction
             newObject.placedBy = "User name";
             */
             _tile = _tileSelector._selectedTile;
-            _tile.AddPlaceableObject(objectToPlaceIndex, 1);
+            //_tile.AddPlaceableObject(objectToPlaceIndex, 1);
 
-            
+            PlaceableObjectData newData = new PlaceableObjectData();
+            newData.id = objectToPlaceIndex;
+            newData.level = 1;
+            newData.placedBy = "User name";
+            newData.progress = 0;
+            newData.timeStamp = "";
+
+            string reference = String.Concat(_tile.ID);
+            _reference.Child(reference).Child("placeableObjectData").SetRawJsonValueAsync(JsonUtility.ToJson(newData));
+
         }
     }
 }

@@ -11,6 +11,8 @@ using XRWorld.Core;
 
 public class FirebaseLevelLoader : MonoBehaviour
 {
+    [SerializeField] private bool _sendLocalDatabaseToServer;
+    [SerializeField] private TextAsset _databaseFile;
     [Serializable]
     public class UnityLevelDataEvent : UnityEvent<LevelData>
     {
@@ -56,13 +58,27 @@ public class FirebaseLevelLoader : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
-                DataSnapshot snapshot = task.Result;
-                LevelData levelData = JsonUtility.FromJson<LevelData>(snapshot.GetRawJsonValue());
-                
-                Debug.Log("Level Loaded");
-                OnLevelLoaded.Invoke(levelData);
+                // using this boolean for simple reset of our online database
+                if (!_sendLocalDatabaseToServer)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    LevelData levelData = JsonUtility.FromJson<LevelData>(snapshot.GetRawJsonValue());
+          
+                    Debug.Log("Level Loaded");
+                    OnLevelLoaded.Invoke(levelData);
+                }
+                else
+                {
+                    SendLocalDatabaseToServer();
+                }
             }
         });
+    }
+
+    private void SendLocalDatabaseToServer()
+    {
+        LevelData levelData = JsonUtility.FromJson<LevelData>(_databaseFile.ToString());
+        _reference.Child(LEVEL_KEY).SetRawJsonValueAsync(JsonUtility.ToJson(levelData));
     }
 
     // TODO: Filter the changed data to make specific changes related to the tiles

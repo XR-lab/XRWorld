@@ -188,6 +188,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[ Core ]'
       objectReference: {fileID: 0}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: _databaseFile
+      value: 
+      objectReference: {fileID: 4900000, guid: a48a1ddabe3940668e9a12b1f350b62d, type: 3}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: _sendLocalDatabaseToServer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4334710252130491090, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
