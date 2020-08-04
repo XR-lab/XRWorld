@@ -5,6 +5,7 @@ using XRWorld.Core;
 
 namespace XRWorld.Database
 {
+    // not using this class. could be deleted in time...
     public class JSONParser : MonoBehaviour
     {
         public TextAsset database;

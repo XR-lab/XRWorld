@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using XRWorld.Core;
+using XRWorld.Core.Tiles;
 namespace XRWorld.Interaction
 {
     [RequireComponent(typeof(TileSelector))]
