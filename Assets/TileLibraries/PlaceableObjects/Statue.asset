@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc044e2eff187cb44b961d628868097e, type: 3}
-  m_Name: Flowers
+  m_Name: Statue
   m_EditorClassIdentifier: 
   _placeableObjectStates:
-  - {fileID: 4831065468605727289, guid: 2f609fcda2cef804aa5d5bdf365b9f27, type: 3}
-  - {fileID: 5261622047590643452, guid: b8092b95ce1ce3342a41fb395389c1e8, type: 3}
-  - {fileID: 6765978893139254675, guid: 6fb594637beb98645acef983c4240529, type: 3}
+  - {fileID: 3627233055539217221, guid: 0a8479b0380ea8043a1af3c921e69174, type: 3}
+  - {fileID: 3627233055539217221, guid: f3155bbc4f87ff542943b781c30062b7, type: 3}
+  - {fileID: 3627233055539217221, guid: 62988307986a3c248959078784356404, type: 3}
