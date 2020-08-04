@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using XRWorld.Core;
 
@@ -7,14 +8,15 @@ namespace XRWorld.Interaction
     public class TileSelector : MonoBehaviour
     {
         [SerializeField] private float _heightSelection = 1;
-        [SerializeField] private Button _button;
+        [SerializeField] private RectTransform _tilePanel;
+        [SerializeField] private RectTransform _objectPanel;
         
         public Tile _selectedTile;
         private TileData _tileData;
         private void Start()
         {
             _selectedTile = null;
-            
+                
         }
 
 
@@ -28,12 +30,13 @@ namespace XRWorld.Interaction
                 }
                 else
                 {
+                  //  RectTransform UIPanel = tile.h
                     UnselectedTile(tile);
                     _selectedTile = tile;
                     _selectedTile.transform.position = new Vector3(_selectedTile.transform.position.x, _selectedTile.transform.position.y + _heightSelection, 
                         _selectedTile.transform.position.z);
-                    _button.transform.position = new Vector3(_selectedTile.transform.position.x + 1, _selectedTile.transform.position.y + 1,_selectedTile.transform.position.z );
-                    _button.gameObject.SetActive(true);
+                    _tilePanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
+                    _tilePanel.gameObject.SetActive(true);
                     
                 }
             }
@@ -46,7 +49,7 @@ namespace XRWorld.Interaction
                 _selectedTile.transform.position = new Vector3(_selectedTile.transform.position.x, _selectedTile.transform.position.y - _heightSelection, 
                     _selectedTile.transform.position.z);
                 _selectedTile = null;
-                _button.gameObject.SetActive(false);
+                _tilePanel.gameObject.SetActive(false);
             }
         }
     }   
