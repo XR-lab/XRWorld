@@ -20,6 +20,6 @@ MonoBehaviour:
   placeableObjects:
   - {fileID: 11400000, guid: 5982fd31775ce5248990fd59412e95ce, type: 2}
   - {fileID: 11400000, guid: 6dbaf61ce1f30ed4985032df3f7f95c3, type: 2}
-  - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}
+  - {fileID: 11400000, guid: 463f64b75e086d844b428b6b30289f18, type: 2}
   - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}
   - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}
