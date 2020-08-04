@@ -13,6 +13,7 @@ namespace XRWorld.Interaction
         
         public Tile _selectedTile;
         private TileData _tileData;
+        private RectTransform _currentPanel;
         private void Start()
         {
             _selectedTile = null;
@@ -30,13 +31,13 @@ namespace XRWorld.Interaction
                 }
                 else
                 {
-                  //  RectTransform UIPanel = tile.h
+                    _currentPanel = tile.HasPlaceableObject ? _objectPanel : _tilePanel;
                     UnselectedTile(tile);
                     _selectedTile = tile;
                     _selectedTile.transform.position = new Vector3(_selectedTile.transform.position.x, _selectedTile.transform.position.y + _heightSelection, 
                         _selectedTile.transform.position.z);
-                    _tilePanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
-                    _tilePanel.gameObject.SetActive(true);
+                    _currentPanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
+                    _currentPanel.gameObject.SetActive(true);
                     
                 }
             }
@@ -49,7 +50,7 @@ namespace XRWorld.Interaction
                 _selectedTile.transform.position = new Vector3(_selectedTile.transform.position.x, _selectedTile.transform.position.y - _heightSelection, 
                     _selectedTile.transform.position.z);
                 _selectedTile = null;
-                _tilePanel.gameObject.SetActive(false);
+                _currentPanel.gameObject.SetActive(false);
             }
         }
     }   
