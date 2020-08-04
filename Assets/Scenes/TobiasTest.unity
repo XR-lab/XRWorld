@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BBQ_Neutral
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22c9220d3dab03d4b9ea4062bba2842f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3971633927622628753, guid: 22c9220d3dab03d4b9ea4062bba2842f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -384,6 +389,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467e7490e2e90e64383f317c43a6cebe, type: 3}
+--- !u!1001 &1165661484
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6290639314488221712, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1c887a0431d1f14d97aa264a2084aeb, type: 2}
+    - target: {fileID: 919132149155446097, guid: 68adbeb172132904da19f41a16abd3f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Statue_Neutral
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68adbeb172132904da19f41a16abd3f2, type: 3}
 --- !u!1001 &1394568638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -450,6 +529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BBQ_Neutral (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22c9220d3dab03d4b9ea4062bba2842f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3971633927622628753, guid: 22c9220d3dab03d4b9ea4062bba2842f,
         type: 3}
@@ -690,6 +774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BBQ_Positive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267207342268450956, guid: 598f19ace2e2800459826f7e5b66a8cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 598f19ace2e2800459826f7e5b66a8cd, type: 3}
