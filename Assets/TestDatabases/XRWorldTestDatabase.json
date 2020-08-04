@@ -7,8 +7,9 @@
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": 2,
+        "id": -1,
         "level": 2,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -19,8 +20,9 @@
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": 0,
+        "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -33,6 +35,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -43,8 +46,9 @@
       "posZ" : 0,
       "placeableObjectData" :
       {
-        "id": 1,
+        "id": -1,
         "level": 0,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -54,8 +58,9 @@
       "posX": 4,
       "posZ": 0,
       "placeableObjectData": {
-        "id": 1,
+        "id": -1,
         "level": 2,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -68,6 +73,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -80,6 +86,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -92,6 +99,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -104,6 +112,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -116,6 +125,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -128,6 +138,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -140,6 +151,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -152,6 +164,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -164,6 +177,7 @@
       {
         "id": 0,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -175,6 +189,7 @@
       "placeableObjectData": {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -187,6 +202,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -199,6 +215,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -211,6 +228,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -223,6 +241,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -234,6 +253,7 @@
       "placeableObjectData": {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -246,6 +266,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -258,6 +279,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -270,6 +292,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -282,6 +305,7 @@
       {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }
@@ -293,6 +317,7 @@
       "placeableObjectData": {
         "id": -1,
         "level": 1,
+        "progress": 0,
         "placedBy": "Richard Test user",
         "timestamp": ""
       }

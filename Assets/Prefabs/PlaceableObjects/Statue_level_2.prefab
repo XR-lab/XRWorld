@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 774423917004555884}
   - component: {fileID: 2844251096997954319}
   m_Layer: 0
-  m_Name: Angel4_Group45072
+  m_Name: Statue_level_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -207199320410012602, guid: 68adbeb172132904da19f41a16abd3f2, type: 3}
+  - {fileID: 2100000, guid: f0c40fc6df316a544b44ffdff425b306, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
