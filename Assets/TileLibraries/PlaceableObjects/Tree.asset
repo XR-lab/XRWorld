@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc044e2eff187cb44b961d628868097e, type: 3}
-  m_Name: Statue
+  m_Name: Tree
   m_EditorClassIdentifier: 
   _placeableObjectStates:
-  - {fileID: 7080445178669746722, guid: f17c9d379ce0f9846a56a7b7a66b44bc, type: 3}
-  - {fileID: 3627233055539217221, guid: f3155bbc4f87ff542943b781c30062b7, type: 3}
-  - {fileID: 3627233055539217221, guid: 62988307986a3c248959078784356404, type: 3}
+  - {fileID: 1740801710420582869, guid: a965d17eff05a3a46969692131c63f2c, type: 3}
+  - {fileID: 4514452384042705781, guid: 7c5c138eb57feae4593a417984916f78, type: 3}
+  - {fileID: 3643737671186856943, guid: 74f86bb9e30af0842a0f782e8f1f7305, type: 3}
