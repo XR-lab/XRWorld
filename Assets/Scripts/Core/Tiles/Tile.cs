@@ -7,6 +7,7 @@ namespace XRWorld.Core.Tiles
     public class Tile : MonoBehaviour
     {
         [SerializeField] private Transform _placeableObjectSpawnpoint;
+        [SerializeField] private Transform _placeableObject;
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
@@ -65,7 +66,12 @@ namespace XRWorld.Core.Tiles
             PlaceableObjectCollection collection = skinLibrary.placeableObjects[_tileData.placeableObjectData.id];
             GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
             
-            Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform);
+            _placeableObject = Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform).transform;
+        }
+
+        public void DeletePlaceableObject()
+        {
+            Destroy(_placeableObject.gameObject);
         }
     }
     
