@@ -13,7 +13,7 @@ namespace XRWorld.Interaction
         private Tile _tile;
         public int cost;
         private PlaceableObjectData newData;
-        private PlaceableObjectData saveId;
+        private int _ID;
 
         private LevelChangeHandler _levelChangeHandler;
 
@@ -40,7 +40,7 @@ namespace XRWorld.Interaction
         {
             // TODO: Fix username
             newData.id = objectToPlaceIndex;
-            saveId.id = newData.id;
+            _ID = newData.id;
             newData.level = 1;
             newData.placedBy = "TEST User name";
             newData.progress = 0;
@@ -58,12 +58,13 @@ namespace XRWorld.Interaction
         {
             
             // TODO: Fix username
-            newData.id = _tile.CheckId(newData.id);
+            print(newData.id);
+            newData.id = _ID;
+            print(newData.id);
             newData.level = level;
             newData.placedBy = "TEST User name";
             newData.progress = 0;
             newData.timeStamp = DateTime.Now.ToString();
-            Debug.Log(newData.id);
             
             _tile = _tileSelector._selectedTile;
 
