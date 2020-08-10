@@ -57,9 +57,7 @@ namespace XRWorld.Interaction
             _tile = _tileSelector._selectedTile;
             
             // TODO: Fix username
-            print(newData.id);
             newData.id = _tile.CheckId();
-            print(newData.id);
             newData.level = level;
             newData.placedBy = "TEST User name";
             newData.progress = 0;
