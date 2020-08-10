@@ -34,14 +34,13 @@ namespace XRWorld.Core
             Vector3 cameraOffsetToCenter = transform.position - _theMiddle;
         }
     }
-
-    public class JSONcamData()
+    
+    public class JSONcamData
     {
         public Vector3 position;
-
-        JSONcamData()
+        public JSONcamData(Vector3 pos)
         {
-            
+            position = pos;
         }
     }
 }
