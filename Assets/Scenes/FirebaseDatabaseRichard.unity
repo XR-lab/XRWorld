@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &124133496 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 639005826808252124, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 544151898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178564885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4334710252130491084, guid: daaa29916250e00439dd899bb000cd2b,
@@ -146,6 +152,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: _tilePanel
+      value: 
+      objectReference: {fileID: 124133496}
+    - target: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: _objectPanel
+      value: 
+      objectReference: {fileID: 548098256}
     - target: {fileID: 1606609851360761664, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -209,6 +225,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4334710252130491090, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
+--- !u!224 &548098256 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2624016507148199077, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 544151898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1879812515
 GameObject:
   m_ObjectHideFlags: 0

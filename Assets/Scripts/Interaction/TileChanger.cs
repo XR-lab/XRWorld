@@ -41,5 +41,18 @@ namespace XRWorld.Interaction
 
             _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
         }
+        
+        public void SetPlaceableObjectLevel(int level)
+        {
+            // TODO: Fix username
+            PlaceableObjectData newData = new PlaceableObjectData();
+         
+            newData.level = level;
+            newData.timeStamp = DateTime.Now.ToString();
+            
+            _tile = _tileSelector._selectedTile;
+
+            _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
+        }
     }
 }
