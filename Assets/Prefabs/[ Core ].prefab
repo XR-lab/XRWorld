@@ -1445,7 +1445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1606609851034241767}
   cost: 0
 --- !u!1 &1606609850183006031
@@ -1617,6 +1616,7 @@ GameObject:
   - component: {fileID: 1606609851034241766}
   - component: {fileID: 1606609851034241767}
   - component: {fileID: 1680652210}
+  - component: {fileID: 1463294712}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -1724,7 +1724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heightSelection: 1
-  _button: {fileID: 639005826808252124}
+  _tilePanel: {fileID: 639005826808252124}
+  _objectPanel: {fileID: 2624016507148199077}
   _selectedTile: {fileID: 0}
 --- !u!114 &1680652210
 MonoBehaviour:
@@ -1740,6 +1741,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneytxt: {fileID: 109530494}
   playerMoney: 500
+--- !u!114 &1463294712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606609851034241787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2837e1289ddd17745b825f8019a193e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1606609851360761671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,6 +1846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b26a443354ad0449481bc5f29ac88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sendLocalDatabaseToServer: 0
+  _databaseFile: {fileID: 4900000, guid: a48a1ddabe3940668e9a12b1f350b62d, type: 3}
   OnLevelLoaded:
     m_PersistentCalls:
       m_Calls:
@@ -2076,6 +2091,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &849616047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334710252130491084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96e20f4280347a494798cf501e191f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4560535939122066762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,7 +2235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _tileSelector: {fileID: 1606609851034241767}
   cost: 0
 --- !u!1 &5238431076136596660
@@ -2440,8 +2466,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSpawn
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3056870095106112620, guid: e9e562e76181f834f838d3cad9d6a3f3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e9e562e76181f834f838d3cad9d6a3f3, type: 3}
+--- !u!1 &4334710252130491084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3056870095106112626, guid: e9e562e76181f834f838d3cad9d6a3f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606609851195795134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4334710252130491089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3056870095106112623, guid: e9e562e76181f834f838d3cad9d6a3f3,
