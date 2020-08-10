@@ -31,8 +31,8 @@ namespace XRWorld.Interaction
                 }
                 else
                 {
-                    _currentPanel = tile.HasPlaceableObject ? _objectPanel : _tilePanel;
                     UnselectedTile(tile);
+                    _currentPanel = tile.HasPlaceableObject ? _objectPanel : _tilePanel;
                     _selectedTile = tile;
                     _selectedTile.transform.position = new Vector3(_selectedTile.transform.position.x, _selectedTile.transform.position.y + _heightSelection, 
                         _selectedTile.transform.position.z);
