@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using XRWorld.Core.Cameras;
 using XRWorld.Database;
 
 namespace XRWorld.Core
@@ -23,6 +24,7 @@ namespace XRWorld.Core
         public void Setup()
         {
             _theMiddle = _levelSpawn.position + _offsetToTheMiddle;
+            FindObjectOfType<CameraCollection>().SetTheMiddle(_theMiddle);
             _camHandler.AddCameraDataToDatabase(transform.position - _theMiddle, transform.rotation.eulerAngles);
 
             _active = true;

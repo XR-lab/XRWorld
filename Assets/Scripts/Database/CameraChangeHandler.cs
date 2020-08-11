@@ -1,5 +1,6 @@
 ﻿using Firebase.Database;
 using UnityEngine;
+using XRWorld.Core.Cameras;
 using Random = UnityEngine.Random;
 
 namespace XRWorld.Database
@@ -7,24 +8,27 @@ namespace XRWorld.Database
     public class CameraChangeHandler : MonoBehaviour
     {
         private DatabaseReference _reference;
-        private string _sessionId;
+        private CameraCollection _collection;
+        private string _sessionId; public string GetSessionID() {return _sessionId;}
         private CamData data;
         
         void Start()
         {
             _reference = FirebaseDatabase.DefaultInstance.GetReference(DatabaseConstants.PLAYERS);
             _sessionId = Random.Range(0, 1000000).ToString();
+            _collection = FindObjectOfType<CameraCollection>();
+            _collection.SetSessionID(_sessionId);
         }
 
         public void AddCameraDataToDatabase(Vector3 pos, Vector3 rot)
         {
-            data = new CamData(pos,rot);
+            data = new CamData(_sessionId,pos,rot);
             _reference.Child(_sessionId).SetRawJsonValueAsync(JsonUtility.ToJson(data));
         }
 
         public void ParseUpdatedCameraData(Vector3 pos, Vector3 rot)
         {
-            data.SetPosRot(pos, rot);
+            data.SetPosRot(_sessionId, pos, rot);
             _reference.Child(_sessionId).SetRawJsonValueAsync(JsonUtility.ToJson(data));
         }
 
@@ -34,22 +38,6 @@ namespace XRWorld.Database
         }
     }
     
-    public class CamData
-    {
-        public Vector3Int pos, rot;
-        public CamData(Vector3 pos, Vector3 rot)
-        {
-            SetPosRot(pos, rot);
-        }
-        public void SetPosRot(Vector3 pos, Vector3 rot)
-        {
-            this.pos = new Vector3Int(Mathf.FloorToInt(pos.x * 100),
-                        Mathf.FloorToInt(pos.y * 100),
-                        Mathf.FloorToInt(pos.z * 100));
-            this.rot = new Vector3Int((Mathf.FloorToInt(rot.x * 100)) / 100,
-                       (Mathf.FloorToInt(rot.y * 100)) / 100,
-                       (Mathf.FloorToInt(rot.z * 100)) / 100);
-        }
-    }
+    
 }
 
