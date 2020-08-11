@@ -1,7 +1,6 @@
 ﻿using System;
 using Firebase.Database;
 using UnityEngine;
-using XRWorld.Core.Tiles;
 
 namespace XRWorld.Database
 {
