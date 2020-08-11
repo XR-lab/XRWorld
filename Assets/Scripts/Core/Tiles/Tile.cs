@@ -7,10 +7,12 @@ namespace XRWorld.Core.Tiles
     public class Tile : MonoBehaviour
     {
         [SerializeField] private Transform _placeableObjectSpawnpoint;
+        [SerializeField] private Transform _placeableObject;
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
-
+        
+        
         private int _ID;
         public int ID
         {
@@ -22,6 +24,7 @@ namespace XRWorld.Core.Tiles
         {
             get { return _tileData.placeableObjectData.id > -1; }
         }
+
         public Vector3 PlaceableObjectSpawnPoint
         {
             get { return _placeableObjectSpawnpoint.position; }
@@ -47,6 +50,7 @@ namespace XRWorld.Core.Tiles
             }
         }
 
+ 
         public void SetGroundType(TileData.GroundType newType)
         {
             _tileData.groundType = newType;
@@ -57,6 +61,7 @@ namespace XRWorld.Core.Tiles
 
         public void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel)
         {
+            print("Updated");
             _tileData.placeableObjectData.id = placeableObjectID;
             _tileData.placeableObjectData.level = placeableObjectLevel;
             
@@ -65,7 +70,20 @@ namespace XRWorld.Core.Tiles
             PlaceableObjectCollection collection = skinLibrary.placeableObjects[_tileData.placeableObjectData.id];
             GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
             
-            Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform);
+            _placeableObject = Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform).transform;
+        }
+
+       public int CheckId()
+        {
+            int id = _tileData.placeableObjectData.id;
+            return id;
+        }
+        
+        
+        
+        public void DeletePlaceableObject()
+        {
+            Destroy(_placeableObject.gameObject);
         }
     }
     

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using XRWorld.Core;
 using XRWorld.Core.Tiles;
 using XRWorld.Database;
 
@@ -11,12 +12,19 @@ namespace XRWorld.Interaction
         public TileSelector _tileSelector;
         private Tile _tile;
         public int cost;
+        private PlaceableObjectData newData;
 
         private LevelChangeHandler _levelChangeHandler;
 
         private void Start()
         {
             _levelChangeHandler = FindObjectOfType<LevelChangeHandler>();
+
+        }
+
+        public void OnLevelLoaded()
+        {
+            
         }
 
         public void ChangeGroundType(int groundTypeID)
@@ -30,14 +38,31 @@ namespace XRWorld.Interaction
         public void SetPlaceableObject(int objectToPlaceIndex)
         {
             // TODO: Fix username
-            PlaceableObjectData newData = new PlaceableObjectData();
             newData.id = objectToPlaceIndex;
             newData.level = 1;
             newData.placedBy = "TEST User name";
             newData.progress = 0;
+            Debug.Log(newData.id);
+
             newData.timeStamp = DateTime.Now.ToString();
             
+            
             _tile = _tileSelector._selectedTile;
+
+            _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
+        }
+        
+        public void SetPlaceableObjectLevel(int level)
+        {
+            _tile = _tileSelector._selectedTile;
+            
+            // TODO: Fix username
+            newData.id = _tile.CheckId();
+            newData.level = level;
+            newData.placedBy = "TEST User name";
+            newData.progress = 0;
+            newData.timeStamp = DateTime.Now.ToString();
+            
 
             _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
         }

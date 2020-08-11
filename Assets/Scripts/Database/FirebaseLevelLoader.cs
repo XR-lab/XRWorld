@@ -103,9 +103,16 @@ namespace XRWorld.Database
                 Debug.Log("Change From Server");
             }
 
-            if (currentData.placeableObjectData.id == -1 && newData.placeableObjectData.id > -1)
+            if (currentData.placeableObjectData.id != newData.placeableObjectData.id)
             {
                 // instantiate the new placeable object
+                changedTile.AddPlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
+            }
+            
+            if (currentData.placeableObjectData.level != newData.placeableObjectData.level)
+            {
+                // instantiate the new placeable object
+                changedTile.DeletePlaceableObject();
                 changedTile.AddPlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
             }
         }
