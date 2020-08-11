@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using XRWorld.Database;
 
 namespace XRWorld.Core
 {
     public class CameraPositionCalculator : MonoBehaviour
     {
-        // whether or not Update should be active
-        private bool _active = false;
-        
+        // Update logic
+        private bool _active = false, _camIntervalActive = false;
+
         // for calculating where the middle of the level is
         [SerializeField] private Transform _levelSpawn;
         [SerializeField] private Vector3 _offsetToTheMiddle;
@@ -22,25 +23,27 @@ namespace XRWorld.Core
         public void Setup()
         {
             _theMiddle = _levelSpawn.position + _offsetToTheMiddle;
-            _camHandler.AddCameraDataToDatabase();
+            _camHandler.AddCameraDataToDatabase(transform.position - _theMiddle, transform.rotation.eulerAngles);
 
             _active = true;
         }
 
         void Update()
         {
-            if(!_active) return;
-
-            Vector3 cameraOffsetToCenter = transform.position - _theMiddle;
+            if(!_active || _camIntervalActive) return;
+            StartCoroutine(CamInterval());
         }
-    }
-    
-    public class JSONcamData
-    {
-        public Vector3 position;
-        public JSONcamData(Vector3 pos)
+
+        IEnumerator CamInterval()
         {
-            position = pos;
+            _camIntervalActive = true;
+            
+            yield return new WaitForSeconds(0.5f);
+            
+            Vector3 cameraOffsetToCenter = transform.position - _theMiddle;
+            _camHandler.ParseUpdatedCameraData(cameraOffsetToCenter, transform.rotation.eulerAngles);
+            
+            _camIntervalActive = false;
         }
     }
 }

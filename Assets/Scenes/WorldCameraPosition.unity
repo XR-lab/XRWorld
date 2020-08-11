@@ -221,6 +221,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1606609851034241765, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606609851034241765, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606609851034241765, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1606609851360761664, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -281,8 +296,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[ Core ]'
       objectReference: {fileID: 0}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: OnLevelLoaded.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: OnLevelLoaded.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: OnLevelLoaded.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: OnLevelLoaded.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 661228573}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: OnLevelLoaded.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LevelLoadedStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043865692908766797, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: OnLevelLoaded.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
+--- !u!1 &661228572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1606609851360761671, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 544151898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &661228573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661228572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84545598848b6343b6ea6dcf7d17dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1879812515
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,5 +7,6 @@ namespace XRWorld.Database
         public const string TILES_REF = "LEVEL_KEY/tiles";
         public const string GROUNDTYPE = "groundType";
         public const string PLACEABLE_OBJECT_DATA = "placeableObjectData";
+        public const string PLAYERS = "PLAYERS";
     }
 }
