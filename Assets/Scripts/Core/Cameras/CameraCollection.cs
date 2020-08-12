@@ -19,7 +19,7 @@ namespace XRWorld.Core.Cameras
         
         public void CameraUpdate(CamData data)
         {
-            //if(data.name == _sessionID) return;
+            if(data.name == _sessionID) return;
 
             if (!_camCollection.ContainsKey(data.name))
             {
