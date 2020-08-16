@@ -34,9 +34,10 @@ namespace XRWorld.Interaction
             UpdatePlacementPose();
             UpdatePlacementIndicator();
 
-            if (Input.touchCount > 0 && isPlaced == false)
+            if (Input.touchCount > 0 && isPlaced == false && _placementPoseIsValid)
             {
                 PlaceLevel();
+               // this.gameObject.SetActive(false);
             }
 
         }

@@ -61,7 +61,7 @@ namespace XRWorld.Core.Tiles
 
         public void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel)
         {
-            print("Updated");
+            
             _tileData.placeableObjectData.id = placeableObjectID;
             _tileData.placeableObjectData.level = placeableObjectLevel;
             
@@ -78,9 +78,7 @@ namespace XRWorld.Core.Tiles
             int id = _tileData.placeableObjectData.id;
             return id;
         }
-        
-        
-        
+
         public void DeletePlaceableObject()
         {
             Destroy(_placeableObject.gameObject);

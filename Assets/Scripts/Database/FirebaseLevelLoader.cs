@@ -106,9 +106,11 @@ namespace XRWorld.Database
             if (currentData.placeableObjectData.id != newData.placeableObjectData.id)
             {
                 // instantiate the new placeable object
+                changedTile.DeletePlaceableObject();
                 changedTile.AddPlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
+
             }
-            
+
             if (currentData.placeableObjectData.level != newData.placeableObjectData.level)
             {
                 // instantiate the new placeable object

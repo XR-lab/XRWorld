@@ -21,11 +21,7 @@ namespace XRWorld.Interaction
             _levelChangeHandler = FindObjectOfType<LevelChangeHandler>();
 
         }
-
-        public void OnLevelLoaded()
-        {
-            
-        }
+        
 
         public void ChangeGroundType(int groundTypeID)
         {
@@ -37,25 +33,45 @@ namespace XRWorld.Interaction
 
         public void SetPlaceableObject(int objectToPlaceIndex)
         {
-            // TODO: Fix username
-            newData.id = objectToPlaceIndex;
-            newData.level = 1;
-            newData.placedBy = "TEST User name";
-            newData.progress = 0;
-            Debug.Log(newData.id);
+            if (objectToPlaceIndex >= 0)
+            {
+                // TODO: Fix username
+                newData.id = objectToPlaceIndex;
+                newData.level = 1;
+                newData.placedBy = "TEST User name";
+                newData.progress = 0;
+                Debug.Log(newData.id);
 
-            newData.timeStamp = DateTime.Now.ToString();
+                newData.timeStamp = DateTime.Now.ToString();
             
-            
-            _tile = _tileSelector._selectedTile;
+                _tile = _tileSelector._selectedTile;
 
-            _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
+
+                _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
+            }
+            else
+            {
+                newData.id = objectToPlaceIndex;
+                newData.level = 1;
+                newData.placedBy = "TEST User name";
+                newData.progress = 0;
+                
+
+                newData.timeStamp = DateTime.Now.ToString();
+            
+                _tile = _tileSelector._selectedTile;
+
+
+                _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
+                _tile.DeletePlaceableObject();
+            }
+            
         }
         
         public void SetPlaceableObjectLevel(int level)
         {
             _tile = _tileSelector._selectedTile;
-            
+    
             // TODO: Fix username
             newData.id = _tile.CheckId();
             newData.level = level;
@@ -65,6 +81,29 @@ namespace XRWorld.Interaction
             
 
             _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
+        }
+
+
+        public void NextPanel(int panelId)
+        {
+            if (panelId == 1)
+            {
+                _tileSelector._currentPanel.gameObject.SetActive(false);
+                _tileSelector._currentPanel = _tileSelector._tilePanel;
+                _tileSelector._currentPanel.transform.position = new Vector3(_tileSelector._selectedTile.transform.position.x , _tileSelector._selectedTile.transform.position.y + 2,_tileSelector._selectedTile.transform.position.z - 3 );
+
+                _tileSelector._currentPanel.gameObject.SetActive(true);
+            }
+            else
+            {
+                _tileSelector._currentPanel.gameObject.SetActive(false);
+                _tileSelector._currentPanel = _tileSelector._objectPanel;
+                _tileSelector._currentPanel.transform.position = new Vector3(_tileSelector._selectedTile.transform.position.x , _tileSelector._selectedTile.transform.position.y + 2,_tileSelector._selectedTile.transform.position.z - 3 );
+
+                _tileSelector._currentPanel.gameObject.SetActive(true);
+            }
+
+            
         }
     }
 }
