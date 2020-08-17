@@ -1,9 +1,17 @@
 fileFormatVersion: 2
-guid: 310a898911ad27d47b6a13952aaed9e4
+guid: f1c5c0c3a6f695e489d723897348f6d4
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
-  externalObjects: {}
+  internalIDToNameTable:
+  - first:
+      74: -1498010087492872569
+    second: CINEMA_4D_Main
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: 257e6399006ff6a44b83128c843a2bcf, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
