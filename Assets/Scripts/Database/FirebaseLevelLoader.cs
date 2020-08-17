@@ -91,7 +91,7 @@ namespace XRWorld.Database
                 Debug.LogError(args.DatabaseError.Message);
                 return;
             }
-
+    
             TileData newData = JsonUtility.FromJson<TileData>(args.Snapshot.GetRawJsonValue());
             Tile changedTile = _tileCollection.GetTileByID(Int32.Parse(args.Snapshot.Key));
             TileData currentData = changedTile.TileData;
@@ -105,10 +105,8 @@ namespace XRWorld.Database
 
             if (currentData.placeableObjectData.id != newData.placeableObjectData.id)
             {
-                // instantiate the new placeable object
-                //changedTile.DeletePlaceableObject();
+                changedTile.DeletePlaceableObject();
                 changedTile.AddPlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
-
             }
 
             if (currentData.placeableObjectData.level != newData.placeableObjectData.level)

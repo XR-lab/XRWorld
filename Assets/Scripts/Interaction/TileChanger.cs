@@ -33,9 +33,7 @@ namespace XRWorld.Interaction
 
         public void SetPlaceableObject(int objectToPlaceIndex)
         {
-            if (objectToPlaceIndex >= 0)
-            {
-                // TODO: Fix username
+            // TODO: Fix username
                 newData.id = objectToPlaceIndex;
                 newData.level = 1;
                 newData.placedBy = "TEST User name";
@@ -48,24 +46,6 @@ namespace XRWorld.Interaction
 
 
                 _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
-            }
-            else
-            {
-                newData.id = objectToPlaceIndex;
-                newData.level = 1;
-                newData.placedBy = "TEST User name";
-                newData.progress = 0;
-                
-
-                newData.timeStamp = DateTime.Now.ToString();
-            
-                _tile = _tileSelector._selectedTile;
-
-
-                _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
-                _tile.DeletePlaceableObject();
-            }
-            
         }
         
         public void SetPlaceableObjectLevel(int level)
