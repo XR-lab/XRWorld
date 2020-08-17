@@ -14,12 +14,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelSpawning_Richard.unity
     guid: f5598d7f20f908a4f9f3efb492bf0a18
   - enabled: 0
     path: Assets/Scenes/UIButtons.unity
     guid: 129fafa9ca1497a4d9816fe79cc76c88
+  - enabled: 1
+    path: Assets/Scenes/WorldCameraPosition.unity
+    guid: 9ad190ae7e23fca49860b10a496c6ee5
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0fa10be76bbcabd4cb3c7fffdf882f14,
       type: 2}
