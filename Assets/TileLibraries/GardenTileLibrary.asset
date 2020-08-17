@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skinType: 0
   _groundTypes:
-  - {fileID: 2100000, guid: da4c776759db3124f87a37ff07066bdd, type: 2}
-  - {fileID: 2100000, guid: 40d657b9502221e4ca2cc259e270b386, type: 2}
-  - {fileID: 2100000, guid: 1e92d7cff60543a438bd68ace3612f7e, type: 2}
+  - {fileID: 2100000, guid: 353acbe4e149c8c45bca3abb55e33ecf, type: 2}
+  - {fileID: 2100000, guid: 98bc2759a6cb2ba4cab9e5f42be2fccb, type: 2}
+  - {fileID: 2100000, guid: 0f80685f15215e4488be07ec4e21674e, type: 2}
   placeableObjects:
   - {fileID: 11400000, guid: 5982fd31775ce5248990fd59412e95ce, type: 2}
   - {fileID: 11400000, guid: 6dbaf61ce1f30ed4985032df3f7f95c3, type: 2}
   - {fileID: 11400000, guid: 463f64b75e086d844b428b6b30289f18, type: 2}
   - {fileID: 11400000, guid: 33eeda34f3bb0364f8d47db107f086cf, type: 2}
-  - {fileID: 11400000, guid: 271848abf9dbc544b86edfa2b13de212, type: 2}
+  - {fileID: 11400000, guid: 4db0d7ad24225c04b96de7e70a6a3077, type: 2}
