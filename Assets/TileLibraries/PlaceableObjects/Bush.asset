@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc044e2eff187cb44b961d628868097e, type: 3}
-  m_Name: Statue
+  m_Name: Bush
   m_EditorClassIdentifier: 
   _placeableObjectStates:
-  - {fileID: 7080445178669746722, guid: f17c9d379ce0f9846a56a7b7a66b44bc, type: 3}
-  - {fileID: 3627233055539217221, guid: f3155bbc4f87ff542943b781c30062b7, type: 3}
-  - {fileID: 7728323671823785866, guid: e5a3c728a17376c4cbc9c7c4a33a025c, type: 3}
+  - {fileID: 2572664715094788372, guid: f0ef14834306d1346b5d99b7ab928a2e, type: 3}
+  - {fileID: 2583022864521867992, guid: 33a4f06e5236a234e9000ef33e36a4dd, type: 3}
+  - {fileID: 2907390629500690351, guid: 312e98994cd49ad4abc91535b8c27aaa, type: 3}
