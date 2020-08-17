@@ -128,30 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 298550135, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: _tilePanel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: _selectPanel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: _objectPanel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: _selectPanelWithObject
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1606609851360761664, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -211,11 +187,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '[ Core ]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 3230570929793705086, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
