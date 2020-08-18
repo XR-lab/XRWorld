@@ -121,6 +121,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &575385655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1641138897380177283, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 824035837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &575385657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575385655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f0d933ecce2764fa56a27706cc9454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 604436200}
+--- !u!20 &604436199 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1606609850183006024, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 824035837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &604436200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1606609850183006069, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 824035837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &824035837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,5 +219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[ Core ]'
       objectReference: {fileID: 0}
+    - target: {fileID: 1641138897380177294, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 604436199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
