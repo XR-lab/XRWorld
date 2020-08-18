@@ -80,7 +80,7 @@ namespace XRWorld.Core.Tiles
             AddPlaceableObject(placeableObjectID, placeableObjectLevel);
         }
 
-       public int CheckId()
+       public int GetPlaceableObjectID()
         {
             int id = _tileData.placeableObjectData.id;
             return id;

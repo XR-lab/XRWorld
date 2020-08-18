@@ -53,7 +53,7 @@ namespace XRWorld.Interaction
             _tile = _tileSelector.SelectedTile;
     
             // TODO: Fix username
-            newData.id = _tile.CheckId();
+            newData.id = _tile.GetPlaceableObjectID();
             newData.level = level;
             newData.placedBy = "TEST User name";
             newData.progress = 0;
