@@ -249,7 +249,6 @@ GameObject:
   - component: {fileID: 1606609851034241761}
   - component: {fileID: 1606609851034241766}
   - component: {fileID: 1606609851034241767}
-  - component: {fileID: 1680652210}
   - component: {fileID: 1463294712}
   - component: {fileID: 544151903}
   m_Layer: 0
@@ -365,20 +364,6 @@ MonoBehaviour:
   _objectPanel: {fileID: 3651326647614050897}
   _selectPanelWithObject: {fileID: 5907363501526740059}
   _tilePanel: {fileID: 2168565993875435560}
---- !u!114 &1680652210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606609851034241787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3187c8a03823dfa4692b0da7c6cf47fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneytxt: {fileID: 0}
-  playerMoney: 500
 --- !u!114 &1463294712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +527,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606609851360761671}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d84545598848b6343b6ea6dcf7d17dca, type: 3}
   m_Name: 
@@ -4185,15 +4170,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3056870095106112620, guid: e9e562e76181f834f838d3cad9d6a3f3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e9e562e76181f834f838d3cad9d6a3f3, type: 3}
---- !u!1 &4334710252130491084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3056870095106112626, guid: e9e562e76181f834f838d3cad9d6a3f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606609851195795134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4334710252130491089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3056870095106112623, guid: e9e562e76181f834f838d3cad9d6a3f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606609851195795134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4334710252130491084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3056870095106112626, guid: e9e562e76181f834f838d3cad9d6a3f3,
     type: 3}
   m_PrefabInstance: {fileID: 1606609851195795134}
   m_PrefabAsset: {fileID: 0}
