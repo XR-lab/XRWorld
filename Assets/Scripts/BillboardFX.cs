@@ -5,17 +5,11 @@ using UnityEngine;
 
 public class BillboardFX : MonoBehaviour
 {
-    [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private Camera _camera;
 
-    private Quaternion _originalRotation;
-
-    void Start()
+    private void LateUpdate()
     {
-        _originalRotation = transform.rotation;
-    }
-
-    private void Update()
-    {
-        transform.rotation = _cameraTransform.rotation * _originalRotation;
+        transform.LookAt(transform.position + _camera.transform.rotation * Vector3.forward, 
+            _camera.transform.rotation * Vector3.up);
     }
 }
