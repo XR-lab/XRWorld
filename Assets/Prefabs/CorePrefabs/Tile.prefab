@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeableObjectSpawnpoint: {fileID: 8433040363123939934}
+  _placeableObject: {fileID: 0}
+  _spawnEffect: {fileID: 693690245801826285, guid: 67368ef5853363d4daed97c76debff33,
+    type: 3}
   _tileData:
     groundType: 0
     posX: 0
@@ -115,6 +118,7 @@ MonoBehaviour:
     placeableObjectData:
       id: 0
       level: 0
+      progress: 0
       placedBy: 
       timeStamp: 
 --- !u!1 &6695393377991102359

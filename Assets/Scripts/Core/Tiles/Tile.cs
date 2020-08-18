@@ -8,6 +8,7 @@ namespace XRWorld.Core.Tiles
     {
         [SerializeField] private Transform _placeableObjectSpawnpoint;
         [SerializeField] private Transform _placeableObject;
+        [SerializeField] private GameObject _spawnEffect;
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
@@ -80,6 +81,8 @@ namespace XRWorld.Core.Tiles
             GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
             
             _placeableObject = Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform).transform;
+
+            Instantiate(_spawnEffect, transform);
         }
 
         public void ReplacePlaceableObject(int placeableObjectID, int placeableObjectLevel)
