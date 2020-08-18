@@ -16,7 +16,8 @@ namespace XRWorld.Interaction
         public RectTransform _objectPanel; //object build panel
         public RectTransform _selectPanelWithObject; 
         public RectTransform _tilePanel;   //change tile texture panel
-        
+
+        public float uiHeight;
         private Tile _selectedTile;
         public Tile SelectedTile => _selectedTile;
         private RectTransform _currentPanel;
@@ -43,8 +44,8 @@ namespace XRWorld.Interaction
                     _selectedTile = tile;
 
                     LeanTween.moveY(_selectedTile.gameObject, _selectedTile.transform.position.y + _heightSelection, _selectionSpeed);
-
-                    _currentPanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
+                    CheckforHeight();
+                    _currentPanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + uiHeight,_selectedTile.transform.position.z  );
                     _currentPanel.gameObject.SetActive(true);
                     
                 }
@@ -78,9 +79,12 @@ namespace XRWorld.Interaction
 
         private void PlaceAndEnableUIPanel(RectTransform panel)
         {
-            panel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
-            panel.gameObject.SetActive(true);
+            CheckforHeight();
+            panel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + uiHeight,_selectedTile.transform.position.z  );
+                panel.gameObject.SetActive(true);
+                
         }
+        
         private void CloseAllUIPanels()
         {
             _selectPanel.gameObject.SetActive(false);
@@ -88,6 +92,23 @@ namespace XRWorld.Interaction
             _objectPanel.gameObject.SetActive(false);
             _selectPanelWithObject.gameObject.SetActive(false);
         }
-    }   
+
+        private void CheckforHeight()
+        {
+            //TODO make sure that it works for all skins and not only (id == 3)
+            int id;
+            id = _selectedTile.CheckId();
+            Debug.Log(id);
+            if (id == 3)
+            {
+                uiHeight = 6;
+            }
+            else
+            {
+                uiHeight = 4;
+            }
+
+        }
+    }
 }
 
