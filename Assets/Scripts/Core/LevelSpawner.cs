@@ -39,6 +39,7 @@ namespace XRWorld.Core
                 }
                 
                 Vector3 spawnPosition = new Vector3(tiles[i].posX, yOffset, tiles[i].posZ);
+                
                 Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
                 tile.SetTileData(tiles[i], i);
 

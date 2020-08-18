@@ -11,7 +11,8 @@ namespace XRWorld.Core.Tiles
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
-        
+
+        private GameObject tileEffect;
         
         private int _ID;
         public int ID
@@ -57,11 +58,19 @@ namespace XRWorld.Core.Tiles
             var tileLibrary = SkinResources.Instance.GetTileLibrary();
             _renderer.material = tileLibrary.GetMaterial((int)_tileData.groundType);
             
+            if (tileEffect != null)
+                Destroy(tileEffect);
+            
+            if (tileLibrary.HasTileEffects(_tileData.groundType))
+            {
+                GameObject effect = tileLibrary.GetParticleEffect(_tileData.groundType);
+                tileEffect = Instantiate(effect, transform);
+            }
+            
         }
 
-        public void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel)
+        private void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel)
         {
-            print("Updated");
             _tileData.placeableObjectData.id = placeableObjectID;
             _tileData.placeableObjectData.level = placeableObjectLevel;
             
@@ -73,18 +82,26 @@ namespace XRWorld.Core.Tiles
             _placeableObject = Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform).transform;
         }
 
+        public void ReplacePlaceableObject(int placeableObjectID, int placeableObjectLevel)
+        {
+            RemovePlaceableObject();
+            AddPlaceableObject(placeableObjectID, placeableObjectLevel);
+        }
+
        public int CheckId()
         {
             int id = _tileData.placeableObjectData.id;
             return id;
         }
-        
-        
-        
-        public void DeletePlaceableObject()
-        {
-            Destroy(_placeableObject.gameObject);
-        }
+
+       public void RemovePlaceableObject()
+       {
+           if (HasPlaceableObject)
+           {
+               _tileData.placeableObjectData.id = -1;
+               Destroy(_placeableObject.gameObject);    
+           }
+       }
     }
     
     [Serializable]

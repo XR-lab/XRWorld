@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3738784602681345728}
   - component: {fileID: 5649135925135967467}
   m_Layer: 0
-  m_Name: boom_pCylinder6
+  m_Name: Tree_level_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7651251456964189116, guid: 11c930820e24ee746a05f1109a1d801e, type: 3}
+  - {fileID: 2100000, guid: 6773611215266524f862c07e5cb9c15c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
