@@ -8,12 +8,13 @@ namespace XRWorld.Interaction
     public class TileSelector : MonoBehaviour
     {
         [SerializeField] private float _heightSelection = 1;
-        [SerializeField] private RectTransform _tilePanel;
-        [SerializeField] private RectTransform _objectPanel;
-        
+        [SerializeField] private RectTransform _selectPanel; //first panel
+        public RectTransform _objectPanel; //object build panel
+        public RectTransform _selectPanelWithObject; 
+        public RectTransform _tilePanel;   //change tile texture panel
         public Tile _selectedTile;
         private TileData _tileData;
-        private RectTransform _currentPanel;
+        public RectTransform _currentPanel;
         private void Start()
         {
             _selectedTile = null;
@@ -32,7 +33,7 @@ namespace XRWorld.Interaction
                 else
                 {
                     UnselectedTile(tile);
-                    _currentPanel = tile.HasPlaceableObject ? _objectPanel : _tilePanel;
+                    _currentPanel = tile.HasPlaceableObject ? _selectPanelWithObject : _selectPanel;
                     _selectedTile = tile;
                     _selectedTile.transform.position = new Vector3(_selectedTile.transform.position.x, _selectedTile.transform.position.y + _heightSelection, 
                         _selectedTile.transform.position.z);
