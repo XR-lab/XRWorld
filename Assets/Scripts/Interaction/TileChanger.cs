@@ -79,6 +79,7 @@ namespace XRWorld.Interaction
             }
             else
             {
+                
                 _tileSelector.OpenObjectPanel();
                 /*
                 _tileSelector._currentPanel = _tileSelector._objectPanel;
