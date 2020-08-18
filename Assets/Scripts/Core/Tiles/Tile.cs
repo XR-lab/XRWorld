@@ -57,6 +57,12 @@ namespace XRWorld.Core.Tiles
             var tileLibrary = SkinResources.Instance.GetTileLibrary();
             _renderer.material = tileLibrary.GetMaterial((int)_tileData.groundType);
             
+            if (tileLibrary.HasTileEffects(_tileData.groundType))
+            {
+                GameObject effect = tileLibrary.GetParticleEffect(_tileData.groundType);
+                Instantiate(effect, transform);
+            }
+            
         }
 
         private void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel)
