@@ -10,7 +10,8 @@ namespace XRWorld.Interaction
         [Header("Selection")]
         [SerializeField] private float _heightSelection = 1;
         [SerializeField] private float _selectionSpeed = 0.1f;
-        
+        [SerializeField] private float _uiShowTime = 0.2f;
+
         [Header("UI Elements")]
         [SerializeField] private RectTransform _selectPanel; //first panel
         public RectTransform _objectPanel; //object build panel
@@ -42,8 +43,11 @@ namespace XRWorld.Interaction
                     _currentPanel = tile.HasPlaceableObject ? _selectPanelWithObject : _selectPanel;
                     _selectedTile = tile;
 
-                    LeanTween.moveY(_selectedTile.gameObject, _selectedTile.transform.position.y + _heightSelection, _selectionSpeed);
-
+                    LeanTween.moveY(_selectedTile.gameObject, _selectedTile.transform.position.y + _heightSelection,
+                        _selectionSpeed).setEaseInBack();
+                   
+                    _currentPanel.localScale = Vector3.zero;
+                    LeanTween.scale(_currentPanel, Vector3.one * 0.01f, _uiShowTime).setEase(LeanTweenType.easeInCubic);
                     _currentPanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
                     _currentPanel.gameObject.SetActive(true);
                     
@@ -78,7 +82,8 @@ namespace XRWorld.Interaction
 
         private void PlaceAndEnableUIPanel(RectTransform panel)
         {
-            panel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
+            Vector3 position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + 2,_selectedTile.transform.position.z - 3 );
+            panel.transform.position = position;
             panel.gameObject.SetActive(true);
         }
         private void CloseAllUIPanels()

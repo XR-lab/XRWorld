@@ -121,26 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &415921511 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1641138897380177283, guid: daaa29916250e00439dd899bb000cd2b,
-    type: 3}
-  m_PrefabInstance: {fileID: 824035837}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &415921516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415921511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tileSelector: {fileID: 0}
-  cost: 0
 --- !u!1001 &824035837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,6 +137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _selectionSpeed
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: _uiShowTime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1606609851360761664, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
@@ -222,12 +207,54 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 415921511}
+      objectReference: {fileID: 2025059147}
     - target: {fileID: 1641138897532123169, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ChangeGroundType
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334710252130491091, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: _minAssembleSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334710252130491091, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: _maxAssembleSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1641138897532123180, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
+--- !u!114 &1874809005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1606609851034241767, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 824035837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a67f2d162b10204bafadfb49745f0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2025059142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1641138897532123175, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 824035837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2025059147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025059142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileSelector: {fileID: 1874809005}
+  cost: 0

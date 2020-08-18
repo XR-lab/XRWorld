@@ -12,26 +12,14 @@ namespace XRWorld.Core.Tiles
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
-
-        private GameObject tileEffect;
+        public TileData TileData => _tileData;
         
         private int _ID;
-        public int ID
-        {
-            get { return _ID; }
-        }
-        public TileData TileData => _tileData;
-   
-        public bool HasPlaceableObject
-        {
-            get { return _tileData.placeableObjectData.id > -1; }
-        }
+        public int ID => _ID;
+        
+        public bool HasPlaceableObject => _tileData.placeableObjectData.id > -1;
 
-        public Vector3 PlaceableObjectSpawnPoint
-        {
-            get { return _placeableObjectSpawnpoint.position; }
-        }
-
+        private GameObject tileEffect;
         private Renderer _renderer;
 
         private void Awake()
@@ -48,7 +36,7 @@ namespace XRWorld.Core.Tiles
 
             if (HasPlaceableObject)
             {
-                AddPlaceableObject(_tileData.placeableObjectData.id, _tileData.placeableObjectData.level);
+                AddPlaceableObject(_tileData.placeableObjectData.id, _tileData.placeableObjectData.level, false);
             }
         }
 
@@ -70,7 +58,7 @@ namespace XRWorld.Core.Tiles
             
         }
 
-        private void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel)
+        private void AddPlaceableObject(int placeableObjectID, int placeableObjectLevel, bool showSpawnFX = true)
         {
             _tileData.placeableObjectData.id = placeableObjectID;
             _tileData.placeableObjectData.level = placeableObjectLevel;
@@ -82,7 +70,8 @@ namespace XRWorld.Core.Tiles
             
             _placeableObject = Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform).transform;
 
-            Instantiate(_spawnEffect, transform);
+            if (showSpawnFX)
+                Instantiate(_spawnEffect, transform);
         }
 
         public void ReplacePlaceableObject(int placeableObjectID, int placeableObjectLevel)
