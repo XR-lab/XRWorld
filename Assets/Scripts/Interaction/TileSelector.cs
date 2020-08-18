@@ -49,7 +49,7 @@ namespace XRWorld.Interaction
                     _currentPanel.localScale = Vector3.zero;
                     LeanTween.scale(_currentPanel, Vector3.one * 0.01f, _uiShowTime).setEase(LeanTweenType.easeInCubic);
                     CheckHeightOffset();
-                    _currentPanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + _uiHeightOffset,_selectedTile.transform.position.z - 3 );
+                    _currentPanel.transform.position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + _uiHeightOffset,_selectedTile.transform.position.z);
                     _currentPanel.gameObject.SetActive(true);
                     
                 }
@@ -84,7 +84,7 @@ namespace XRWorld.Interaction
         private void PlaceAndEnableUIPanel(RectTransform panel)
         {
             CheckHeightOffset();
-            Vector3 position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + _uiHeightOffset,_selectedTile.transform.position.z - 3 );
+            Vector3 position = new Vector3(_selectedTile.transform.position.x , _selectedTile.transform.position.y + _uiHeightOffset,_selectedTile.transform.position.z);
             panel.transform.position = position;
             panel.gameObject.SetActive(true);
         }
@@ -101,11 +101,11 @@ namespace XRWorld.Interaction
             int id = _selectedTile.GetPlaceableObjectID();
             if (id == 3)
             {
-                _uiHeightOffset = 6;
+                _uiHeightOffset = 5;
             }
             else
             {
-                _uiHeightOffset = 4;
+                _uiHeightOffset = 3;
             }
         }
     }   
