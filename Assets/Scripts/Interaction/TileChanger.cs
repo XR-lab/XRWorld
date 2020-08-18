@@ -69,7 +69,7 @@ namespace XRWorld.Interaction
             {
                 _tileSelector._currentPanel.gameObject.SetActive(false);
                 _tileSelector._currentPanel = _tileSelector._tilePanel;
-                _tileSelector._currentPanel.transform.position = new Vector3(_tileSelector._selectedTile.transform.position.x , _tileSelector._selectedTile.transform.position.y + 2,_tileSelector._selectedTile.transform.position.z - 3 );
+                _tileSelector._currentPanel.transform.position = new Vector3(_tileSelector._selectedTile.transform.position.x , _tileSelector._selectedTile.transform.position.y + 5,_tileSelector._selectedTile.transform.position.z  );
 
                 _tileSelector._currentPanel.gameObject.SetActive(true);
             }
@@ -77,7 +77,7 @@ namespace XRWorld.Interaction
             {
                 _tileSelector._currentPanel.gameObject.SetActive(false);
                 _tileSelector._currentPanel = _tileSelector._objectPanel;
-                _tileSelector._currentPanel.transform.position = new Vector3(_tileSelector._selectedTile.transform.position.x , _tileSelector._selectedTile.transform.position.y + 2,_tileSelector._selectedTile.transform.position.z - 3 );
+                _tileSelector._currentPanel.transform.position = new Vector3(_tileSelector._selectedTile.transform.position.x , _tileSelector._selectedTile.transform.position.y + 5,_tileSelector._selectedTile.transform.position.z  );
 
                 _tileSelector._currentPanel.gameObject.SetActive(true);
             }
