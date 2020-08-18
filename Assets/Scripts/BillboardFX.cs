@@ -1,11 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BillboardFX : MonoBehaviour
 {
-    void Update()
+    [SerializeField] private Transform _cameraTransform;
+
+    private Quaternion _originalRotation;
+
+    void Start()
     {
-	    transform.LookAt(Camera.main.transform);
+        _originalRotation = transform.rotation;
+    }
+
+    private void Update()
+    {
+        transform.rotation = _cameraTransform.rotation * _originalRotation;
     }
 }
