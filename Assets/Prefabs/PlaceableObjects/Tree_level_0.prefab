@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 947983095163891288}
   - component: {fileID: 2397655432118420616}
   m_Layer: 0
-  m_Name: pPlane4
+  m_Name: Tree_level_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -653603522583941799, guid: b700c7c2434e8994caa60cf243058e13, type: 3}
+  - {fileID: 2100000, guid: 80960c18f8ab29e4a89cb274f404eae0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

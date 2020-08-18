@@ -1,5 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using UnityEngine;
 using XRWorld.Core;
+using XRWorld.Core.Tiles;
 
 namespace XRWorld.Assets
 {
@@ -17,11 +21,44 @@ namespace XRWorld.Assets
 
         public PlaceableObjectCollection[] placeableObjects;
         
+        [SerializeField] private TileEffect[] _tileEffects;
+
         public Material GetMaterial(int indexID)
         {
             return _groundTypes[indexID];
         }
-    } 
-    } 
+
+        // we can't serialize dictionaries in scriptable objects, hence we're iterating.
+        public bool HasTileEffects(TileData.GroundType groundType)
+        {
+            for (int i = 0; i < _tileEffects.Length; i++)
+            {
+                if (_tileEffects[i].groundType != groundType) continue;
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public GameObject GetParticleEffect(TileData.GroundType groundType)
+        {
+            for (int i = 0; i < _tileEffects.Length; i++)
+            {
+                if (_tileEffects[i].groundType != groundType) continue;
+
+                return _tileEffects[i].ParticleSystemGameObject;
+            }
+            return null;
+        }
+
+    }
+    [Serializable]
+    public struct TileEffect
+    {
+        public TileData.GroundType groundType;
+        public GameObject ParticleSystemGameObject;
+    }
+} 
 
 

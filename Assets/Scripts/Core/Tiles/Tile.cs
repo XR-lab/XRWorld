@@ -11,7 +11,8 @@ namespace XRWorld.Core.Tiles
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
-        
+
+        private GameObject tileEffect;
         
         private int _ID;
         public int ID
@@ -56,6 +57,15 @@ namespace XRWorld.Core.Tiles
             _tileData.groundType = newType;
             var tileLibrary = SkinResources.Instance.GetTileLibrary();
             _renderer.material = tileLibrary.GetMaterial((int)_tileData.groundType);
+            
+            if (tileEffect != null)
+                Destroy(tileEffect);
+            
+            if (tileLibrary.HasTileEffects(_tileData.groundType))
+            {
+                GameObject effect = tileLibrary.GetParticleEffect(_tileData.groundType);
+                tileEffect = Instantiate(effect, transform);
+            }
             
         }
 
