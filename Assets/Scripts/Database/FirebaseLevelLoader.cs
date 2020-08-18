@@ -105,15 +105,15 @@ namespace XRWorld.Database
 
             if (currentData.placeableObjectData.id != newData.placeableObjectData.id)
             {
-                //changedTile.DeletePlaceableObject();
-                changedTile.AddPlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
+                if (newData.placeableObjectData.id != -1)
+                    changedTile.ReplacePlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
+                else
+                    changedTile.RemovePlaceableObject();
             }
 
             if (currentData.placeableObjectData.level != newData.placeableObjectData.level)
             {
-                // instantiate the new placeable object
-                changedTile.DeletePlaceableObject();
-                changedTile.AddPlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
+                changedTile.ReplacePlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
             }
         }
     }

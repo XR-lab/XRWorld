@@ -33,42 +33,21 @@ namespace XRWorld.Interaction
 
         public void SetPlaceableObject(int objectToPlaceIndex)
         {
-            if (objectToPlaceIndex >= 0)
-            {
-                // TODO: Fix username
-                newData.id = objectToPlaceIndex;
-                newData.level = 1;
-                newData.placedBy = "TEST User name";
-                newData.progress = 0;
-                Debug.Log(newData.id);
+            // TODO: Fix username
+            newData.id = objectToPlaceIndex;
+            newData.level = 1;
+            newData.placedBy = "TEST User name";
+            newData.progress = 0;
+            Debug.Log(newData.id);
 
-                newData.timeStamp = DateTime.Now.ToString();
+            newData.timeStamp = DateTime.Now.ToString();
             
-                _tile = _tileSelector._selectedTile;
+            _tile = _tileSelector._selectedTile;
 
 
-                _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
-            }
-            else
-            {
-                // TODO: Fix username
-                newData.id = objectToPlaceIndex;
-                newData.level = 1;
-                newData.placedBy = "TEST User name";
-                newData.progress = 0;
-                Debug.Log(newData.id);
-
-                newData.timeStamp = DateTime.Now.ToString();
-            
-                _tile = _tileSelector._selectedTile;
-
-
-                _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
-                _tile.DeletePlaceableObject();
-            }
-          
+            _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
         }
-        
+
         public void SetPlaceableObjectLevel(int level)
         {
             _tile = _tileSelector._selectedTile;
@@ -80,7 +59,6 @@ namespace XRWorld.Interaction
             newData.progress = 0;
             newData.timeStamp = DateTime.Now.ToString();
             
-
             _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
         }
 
