@@ -34,7 +34,7 @@ namespace XRWorld.Database
 
         private void OnApplicationQuit()
         {
-            _reference.Child(_sessionId).SetRawJsonValueAsync(null);
+            //_reference.Child(_sessionId).SetRawJsonValueAsync(null);
         }
     }
     
