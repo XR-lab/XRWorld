@@ -16,5 +16,7 @@ namespace XRWorld.Core.Tiles
         {
             return _tiles[id];
         }
+
+        public int Length => _tiles.Count;
     }
 }
