@@ -50,7 +50,11 @@ namespace XRWorld.Core
 
                 float tweenTime = Random.Range(_minAssembleSpeed, _maxAssembleSpeed);
                 LeanTween.moveLocal(tile.gameObject, levelPosition, tweenTime).setEase(LeanTweenType.easeInBack);
-                LeanTween.rotateAround(tile.gameObject, Vector3.up, 360, tweenTime);
+                if (tile.HasPlaceableObject)
+                    LeanTween.rotateAround(tile.gameObject, Vector3.up, 360, tweenTime)
+                        .setOnComplete(tile.StartPlacableObjectSpawnEffect);
+                else
+                    LeanTween.rotateAround(tile.gameObject, Vector3.up, 360, tweenTime);
                 
                 _tileCollection.AddTile(tile);
             }
