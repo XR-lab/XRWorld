@@ -13,6 +13,11 @@ namespace XRWorld.Core
         [SerializeField] private float _maxHeightOffset = 0.25f;
         [SerializeField] private float _heightTiers = 4;
 
+        [Header("Spawn Effect Settings")]
+        [SerializeField] private float _spawnSphereSize = 20;
+        [SerializeField] private float _minAssembleSpeed;
+        [SerializeField] private float _maxAssembleSpeed;
+        
         private TileCollection _tileCollection;
         private void Start()
         {
@@ -38,32 +43,17 @@ namespace XRWorld.Core
                     }
                 }
                 
-                Vector3 spawnPosition = new Vector3(tiles[i].posX, yOffset, tiles[i].posZ);
+                Vector3 spawnPosition = Random.insideUnitSphere * _spawnSphereSize;
+                Vector3 levelPosition = new Vector3(tiles[i].posX, yOffset, tiles[i].posZ);
                 Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
                 tile.SetTileData(tiles[i], i);
 
+                float tweenTime = Random.Range(_minAssembleSpeed, _maxAssembleSpeed);
+                LeanTween.moveLocal(tile.gameObject, levelPosition, tweenTime).setEase(LeanTweenType.easeInBack);
+                LeanTween.rotateAround(tile.gameObject, Vector3.up, 360, tweenTime);
+                
                 _tileCollection.AddTile(tile);
             }
-            /*
-            foreach (var tileData in levelData.tiles)
-            {
-                float yOffset = Mathf.PerlinNoise(tileData.posX / levelSize.x, tileData.posZ / levelSize.y);
-                
-                for (int i = 0; i < _heightTiers; i++)
-                {
-                    if (yOffset >= unscaledHeightStep * i && yOffset < unscaledHeightStep * (i+1))
-                    {
-                        yOffset = scaledHeightStep * i;
-                    }
-                }
-                
-                Vector3 spawnPosition = new Vector3(tileData.posX, yOffset, tileData.posZ);
-                Tile tile = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity, transform);
-                tile.SetTileData(tileData);
-                
-                _tileCollection.AddTile(tile, tileData);
-            }
-            */
 
             // adjust spawner position offset, to center spawnpostion of level. Might not need this in AR.
             transform.position = placementPosition;

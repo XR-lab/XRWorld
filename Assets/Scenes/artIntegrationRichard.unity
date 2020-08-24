@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &12322426 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1606609850183006024, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 824035837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &824035837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,11 +134,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1606609851034241761, guid: daaa29916250e00439dd899bb000cd2b,
-        type: 3}
-      propertyPath: _runInEditor
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 575385657, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
+      propertyPath: _cameraTransform
+      value: 
+      objectReference: {fileID: 2091042910}
+    - target: {fileID: 575385657, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 12322426}
     - target: {fileID: 1606609851360761664, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -193,5 +202,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[ Core ]'
       objectReference: {fileID: 0}
+    - target: {fileID: 5873533810719075457, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daaa29916250e00439dd899bb000cd2b, type: 3}
+--- !u!4 &2091042910 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1606609851034241765, guid: daaa29916250e00439dd899bb000cd2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 824035837}
+  m_PrefabAsset: {fileID: 0}
