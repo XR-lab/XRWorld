@@ -28,7 +28,6 @@ namespace XRWorld.Core.Tiles
         private Renderer _renderer;
         private Transform _placeableObject;
         
-
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
