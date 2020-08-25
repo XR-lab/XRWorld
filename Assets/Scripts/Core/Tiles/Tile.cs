@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 using XRWorld.Assets;
 
@@ -11,7 +12,6 @@ namespace XRWorld.Core.Tiles
         
         [SerializeField] private GameObject _spawnEffectPrefab;
         [SerializeField] private float _spawnEffectTime = 0.5f;
-        
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
         public TileData TileData => _tileData;
@@ -27,13 +27,13 @@ namespace XRWorld.Core.Tiles
         private GameObject tileEffect;
         private Renderer _renderer;
         private Transform _placeableObject;
-        
+
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
             _timeKeeper = GetComponentInParent<TimeKeeper>();
         }
-
+        
         public void SetTileData(TileData tileData, int tileID)
         {
             _ID = tileID;
@@ -48,7 +48,6 @@ namespace XRWorld.Core.Tiles
             }
         }
 
- 
         public void SetGroundType(TileData.GroundType newType)
         {
             _tileData.groundType = newType;
@@ -88,7 +87,12 @@ namespace XRWorld.Core.Tiles
                 
         }
 
-        public void StartPlacableObjectSpawnEffect()
+        public void OnTilePlaced()
+        {
+            StartPlacableObjectSpawnEffect();
+        }
+        
+        private void StartPlacableObjectSpawnEffect()
         {
             LeanTween.value(_placeableObject.gameObject, UpdateSpawnEffect, 0f, 1f, _spawnEffectTime).setEaseOutCubic();
         }
@@ -96,6 +100,7 @@ namespace XRWorld.Core.Tiles
         {
             _placeableObject.gameObject.GetComponent<Renderer>().material.SetFloat("_SpawnProgress", val);
         }
+        
         public void ReplacePlaceableObject(int placeableObjectID, int placeableObjectLevel)
         {
             RemovePlaceableObject(); 

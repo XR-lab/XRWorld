@@ -52,7 +52,7 @@ namespace XRWorld.Core
                 LeanTween.moveLocal(tile.gameObject, levelPosition, tweenTime).setEase(LeanTweenType.easeInBack);
                 if (tile.HasPlaceableObject)
                     LeanTween.rotateAround(tile.gameObject, Vector3.up, 360, tweenTime)
-                        .setOnComplete(tile.StartPlacableObjectSpawnEffect);
+                        .setOnComplete(tile.OnTilePlaced);
                 else
                     LeanTween.rotateAround(tile.gameObject, Vector3.up, 360, tweenTime);
                 
