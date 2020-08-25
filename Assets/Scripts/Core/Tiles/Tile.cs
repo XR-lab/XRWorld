@@ -16,6 +16,9 @@ namespace XRWorld.Core.Tiles
         [SerializeField] private TileData _tileData;
         public TileData TileData => _tileData;
         
+        // time variables
+        private TimeKeeper _timeKeeper;
+        
         private int _ID;
         public int ID => _ID;
         
@@ -28,6 +31,7 @@ namespace XRWorld.Core.Tiles
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
+            _timeKeeper = GetComponentInParent<TimeKeeper>();
         }
 
         public void SetTileData(TileData tileData, int tileID)
@@ -39,7 +43,8 @@ namespace XRWorld.Core.Tiles
 
             if (HasPlaceableObject)
             {
-                AddPlaceableObject(_tileData.placeableObjectData.id, _tileData.placeableObjectData.level, false);
+                int tempLevel = _timeKeeper.CheckAge(_tileData.placeableObjectData, _ID);
+                AddPlaceableObject(_tileData.placeableObjectData.id, tempLevel, false);
             }
         }
 
@@ -65,6 +70,7 @@ namespace XRWorld.Core.Tiles
         {
             _tileData.placeableObjectData.id = placeableObjectID;
             _tileData.placeableObjectData.level = placeableObjectLevel;
+            
             
             Vector3 spawnableObjectPosition = _placeableObjectSpawnpoint.position;
             SkinLibrary skinLibrary = SkinResources.Instance.GetTileLibrary();
@@ -109,6 +115,11 @@ namespace XRWorld.Core.Tiles
                _tileData.placeableObjectData.id = -1;
                Destroy(_placeableObject.gameObject);    
            }
+       }
+
+       public void SetTimeStamp(string timeStamp)
+       {
+           _tileData.placeableObjectData.timeStamp = timeStamp;
        }
     }
     

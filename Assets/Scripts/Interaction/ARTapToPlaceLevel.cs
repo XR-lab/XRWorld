@@ -20,13 +20,14 @@ namespace XRWorld.Interaction
         private Pose _placementPose;
         private bool _placementPoseIsValid = false;
         public bool isPlaced = false;
-
+        private ARPlaneManager _arPlaneManager;
         private LevelData _levelData;
 
         void Start()
         {
             _levelSpawner = FindObjectOfType<LevelSpawner>();
             _raycastManager = FindObjectOfType<ARRaycastManager>();
+            _arPlaneManager = FindObjectOfType<ARPlaneManager>();
         }
 
         void Update()
@@ -54,6 +55,18 @@ namespace XRWorld.Interaction
             isPlaced = true;
             placementIndicator.SetActive(false);
             enabled = false;
+            DisablePlaneDetection();
+            
+        }
+
+        private void DisablePlaneDetection()
+        {
+            _arPlaneManager.enabled = !_arPlaneManager.enabled;
+
+            foreach (ARPlane plane in _arPlaneManager.trackables)
+            {
+             plane.gameObject.SetActive(_arPlaneManager.enabled = false);   
+            }
         }
 
         private void UpdatePlacementIndicator()

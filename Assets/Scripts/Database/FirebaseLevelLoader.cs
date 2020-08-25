@@ -116,6 +116,9 @@ namespace XRWorld.Database
                 Debug.Log("Level Change");
                 changedTile.ReplacePlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
             }
+
+            changedTile.SetTimeStamp(newData.placeableObjectData.timeStamp);
+            
         }
     }
 }
