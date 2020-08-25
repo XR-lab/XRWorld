@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using XRWorld.Assets;
 
@@ -7,12 +8,16 @@ namespace XRWorld.Core.Tiles
     public class Tile : MonoBehaviour
     {
         [SerializeField] private Transform _placeableObjectSpawnpoint;
-        [SerializeField] private Transform _placeableObject;
-        [SerializeField] private GameObject _spawnEffect;
+        
+        [SerializeField] private GameObject _spawnEffectPrefab;
+        [SerializeField] private float _spawnEffectTime = 0.5f;
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
         public TileData TileData => _tileData;
+        
+        // time variables
+        private TimeKeeper _timeKeeper;
         
         private int _ID;
         public int ID => _ID;
@@ -21,10 +26,12 @@ namespace XRWorld.Core.Tiles
 
         private GameObject tileEffect;
         private Renderer _renderer;
-
+        private Transform _placeableObject;
+        
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
+            _timeKeeper = GetComponentInParent<TimeKeeper>();
         }
 
         public void SetTileData(TileData tileData, int tileID)
@@ -36,7 +43,8 @@ namespace XRWorld.Core.Tiles
 
             if (HasPlaceableObject)
             {
-                AddPlaceableObject(_tileData.placeableObjectData.id, _tileData.placeableObjectData.level, false);
+                int tempLevel = _timeKeeper.CheckAge(_tileData.placeableObjectData, _ID);
+                AddPlaceableObject(_tileData.placeableObjectData.id, tempLevel, false);
             }
         }
 
@@ -63,20 +71,34 @@ namespace XRWorld.Core.Tiles
             _tileData.placeableObjectData.id = placeableObjectID;
             _tileData.placeableObjectData.level = placeableObjectLevel;
             
+            
             Vector3 spawnableObjectPosition = _placeableObjectSpawnpoint.position;
             SkinLibrary skinLibrary = SkinResources.Instance.GetTileLibrary();
             PlaceableObjectCollection collection = skinLibrary.placeableObjects[_tileData.placeableObjectData.id];
             GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
             
             _placeableObject = Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform).transform;
+            _placeableObject.gameObject.GetComponent<Renderer>().material.SetFloat("_SpawnProgress", 0);
 
             if (showSpawnFX)
-                Instantiate(_spawnEffect, transform);
+            {
+                Instantiate(_spawnEffectPrefab, transform);
+                StartPlacableObjectSpawnEffect();
+            }
+                
         }
 
+        public void StartPlacableObjectSpawnEffect()
+        {
+            LeanTween.value(_placeableObject.gameObject, UpdateSpawnEffect, 0f, 1f, _spawnEffectTime).setEaseOutCubic();
+        }
+        void UpdateSpawnEffect(float val)
+        {
+            _placeableObject.gameObject.GetComponent<Renderer>().material.SetFloat("_SpawnProgress", val);
+        }
         public void ReplacePlaceableObject(int placeableObjectID, int placeableObjectLevel)
         {
-            RemovePlaceableObject();
+            RemovePlaceableObject(); 
             AddPlaceableObject(placeableObjectID, placeableObjectLevel);
         }
 
@@ -93,6 +115,11 @@ namespace XRWorld.Core.Tiles
                _tileData.placeableObjectData.id = -1;
                Destroy(_placeableObject.gameObject);    
            }
+       }
+
+       public void SetTimeStamp(string timeStamp)
+       {
+           _tileData.placeableObjectData.timeStamp = timeStamp;
        }
     }
     

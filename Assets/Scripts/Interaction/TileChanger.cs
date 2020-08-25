@@ -3,6 +3,7 @@ using UnityEngine;
 using XRWorld.Core;
 using XRWorld.Core.Tiles;
 using XRWorld.Database;
+using XRWorld.Users;
 
 namespace XRWorld.Interaction
 {
@@ -15,11 +16,12 @@ namespace XRWorld.Interaction
         private PlaceableObjectData newData;
 
         private LevelChangeHandler _levelChangeHandler;
-
+        private string _nickname = "A tester";
+        
         private void Start()
         {
             _levelChangeHandler = FindObjectOfType<LevelChangeHandler>();
-
+            _nickname = FindObjectOfType<NickNameSetter>().GetNickName();
         }
         
 
@@ -33,14 +35,13 @@ namespace XRWorld.Interaction
 
         public void SetPlaceableObject(int objectToPlaceIndex)
         {
-            // TODO: Fix username
             newData.id = objectToPlaceIndex;
             newData.level = 1;
-            newData.placedBy = "TEST User name";
+            newData.placedBy = _nickname;
             newData.progress = 0;
             Debug.Log(newData.id);
 
-            newData.timeStamp = DateTime.Now.ToString();
+            newData.timeStamp = DateTime.Now.ToString("u");
             
             _tile = _tileSelector.SelectedTile;
 
@@ -52,12 +53,11 @@ namespace XRWorld.Interaction
         {
             _tile = _tileSelector.SelectedTile;
     
-            // TODO: Fix username
             newData.id = _tile.GetPlaceableObjectID();
             newData.level = level;
-            newData.placedBy = "TEST User name";
+            newData.placedBy = _nickname;
             newData.progress = 0;
-            newData.timeStamp = DateTime.Now.ToString();
+            newData.timeStamp = DateTime.Now.ToString("u");
             
             _levelChangeHandler.ParsePlaceableObjectPlacement(_tile, newData);
         }

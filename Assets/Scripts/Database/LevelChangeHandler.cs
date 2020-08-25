@@ -22,9 +22,12 @@ namespace XRWorld.Database
         public void ParsePlaceableObjectPlacement(Tile tile, PlaceableObjectData data)
         {
             string tileID = tile.ID.ToString();
-                            _reference.Child(tileID).Child(DatabaseConstants.PLACEABLE_OBJECT_DATA).SetRawJsonValueAsync(JsonUtility.ToJson(data));
-
-            
+            _reference.Child(tileID).Child(DatabaseConstants.PLACEABLE_OBJECT_DATA).SetRawJsonValueAsync(JsonUtility.ToJson(data));
+        }
+        public void ParsePlaceableObjectPlacement(string ID, PlaceableObjectData data)
+        {
+            string tileID = ID;
+            _reference.Child(tileID).Child(DatabaseConstants.PLACEABLE_OBJECT_DATA).SetRawJsonValueAsync(JsonUtility.ToJson(data));
         }
     }
 }
