@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ecc18a2d8984941ba3ba324ae1c0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _runInEditor: 1
+  _runInEditor: 0
   placementIndicator: {fileID: 3227186343799495070}
   isPlaced: 0
 --- !u!114 &1606609851034241766
@@ -1666,7 +1666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3651326647614050897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2381,7 +2381,7 @@ GameObject:
   - component: {fileID: 4310988137411306772}
   - component: {fileID: 2482539091760359179}
   m_Layer: 5
-  m_Name: Remove
+  m_Name: Lilypad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d9ae7bde92ef50643adf72b04136e8fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e71d0877674649c40a313df2d0504ed0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2867,7 +2867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5907363501526740059
 RectTransform:
   m_ObjectHideFlags: 0
