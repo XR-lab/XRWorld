@@ -9,15 +9,32 @@ namespace XRWorld.Core.Cameras
     public class CameraCollection : MonoBehaviour
     {
         private Dictionary<string, Transform> _camCollection = new Dictionary<string, Transform>();
+        private Dictionary<string, float> _camTimer = new Dictionary<string, float>();
         private string _sessionID; public void SetSessionID(string ID) {_sessionID = ID;}
         private Vector3 _theMiddle;
 
         [SerializeField] private GameObject _cameraPrefab;
         [SerializeField] private Text _mainCamCanvasText;
 
+        [SerializeField] private float _disconectTimer = 10;
+
         public void SetTheMiddle(Vector3 mid)
         {
             _theMiddle = mid;
+        }
+        
+        private void Update()
+        {
+            foreach (var pair in _camTimer)
+            {
+                float time = _camTimer[pair.Key] += Time.deltaTime;
+                if (time >= _disconectTimer)
+                {
+                    Destroy(_camCollection[pair.Key].gameObject);
+                    _camCollection.Remove(pair.Key);
+                    _camTimer.Remove(pair.Key);
+                }
+            }
         }
         
         public void CameraUpdate(CamData data)
@@ -38,6 +55,7 @@ namespace XRWorld.Core.Cameras
             Transform tra = Instantiate(_cameraPrefab).GetComponent<Transform>();
             tra.GetComponentInChildren<NickNamePointer>().SetNickname(data.name);
             _camCollection.Add(data.sesionId, tra);
+            _camTimer.Add(data.sesionId, 0);
         }
 
         private IEnumerator NewConnection(CamData data)
@@ -49,6 +67,7 @@ namespace XRWorld.Core.Cameras
 
         private void MoveCam(CamData data)
         {
+            _camTimer[data.sesionId] = 0;
             Vector3 pos = new Vector3(data.pos.x, data.pos.y,data.pos.z) / 100;
             StartCoroutine(CamLerp(pos + _theMiddle, data.rot, _camCollection[data.sesionId]));
         }
