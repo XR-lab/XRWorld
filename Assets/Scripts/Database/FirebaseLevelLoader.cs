@@ -100,19 +100,20 @@ namespace XRWorld.Database
             {
                 //changedTile.SetTileData(newData);
                 changedTile.SetGroundType(newData.groundType);
-                Debug.Log("Change From Server");
             }
 
             if (currentData.placeableObjectData.id != newData.placeableObjectData.id)
             {
+                Debug.Log("ID Change");
                 if (newData.placeableObjectData.id != -1)
                     changedTile.ReplacePlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
                 else
                     changedTile.RemovePlaceableObject();
             }
 
-            if (currentData.placeableObjectData.level != newData.placeableObjectData.level)
+            if (currentData.placeableObjectData.level != newData.placeableObjectData.level && newData.placeableObjectData.id != -1)
             {
+                Debug.Log("Level Change");
                 changedTile.ReplacePlaceableObject(newData.placeableObjectData.id, newData.placeableObjectData.level);
             }
         }

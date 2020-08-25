@@ -109,8 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _placeableObjectSpawnpoint: {fileID: 8433040363123939934}
   _placeableObject: {fileID: 0}
-  _spawnEffect: {fileID: 693690245801826285, guid: 67368ef5853363d4daed97c76debff33,
+  _spawnEffectPrefab: {fileID: 693690245801826285, guid: 67368ef5853363d4daed97c76debff33,
     type: 3}
+  _spawnEffectTime: 0.5
   _tileData:
     groundType: 0
     posX: 0

@@ -62,3 +62,6 @@ MonoBehaviour:
   _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _maxHeightOffset: 0.25
   _heightTiers: 4
+  _spawnSphereSize: 30
+  _minAssembleSpeed: 1
+  _maxAssembleSpeed: 2.5
