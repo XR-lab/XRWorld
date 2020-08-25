@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 6177223001382957938, guid: 2327fa11fe978da4593c13c3e076cdc3,
     type: 3}
-  m_DetectionMode: -1
+  m_DetectionMode: 1
 --- !u!114 &1606609851034241762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,6 +1031,7 @@ GameObject:
   - component: {fileID: 1641138897380177292}
   - component: {fileID: 217437297}
   - component: {fileID: 1583753529}
+  - component: {fileID: 4999989687511810775}
   m_Layer: 5
   m_Name: Tileshop Canvas
   m_TagString: Untagged
@@ -1136,6 +1137,20 @@ MonoBehaviour:
   _tileSelector: {fileID: 1606609851034241767}
   cost: 0
 --- !u!114 &1583753529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641138897380177283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2e8cd230d897945941a076b3e96a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileSelector: {fileID: 1606609851034241767}
+  cost: 0
+--- !u!114 &4999989687511810775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1268,7 +1283,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: ChangeGroundType
         m_Mode: 3
         m_Arguments:
@@ -1398,7 +1413,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: ChangeGroundType
         m_Mode: 3
         m_Arguments:
@@ -1528,7 +1543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: ChangeGroundType
         m_Mode: 3
         m_Arguments:
@@ -1830,7 +1845,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: NextPanel
         m_Mode: 3
         m_Arguments:
@@ -2196,7 +2211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: NextPanel
         m_Mode: 3
         m_Arguments:
@@ -2326,13 +2341,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObject
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2456,7 +2471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObject
         m_Mode: 3
         m_Arguments:
@@ -2677,7 +2692,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: NextPanel
         m_Mode: 3
         m_Arguments:
@@ -2807,7 +2822,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObject
         m_Mode: 3
         m_Arguments:
@@ -3242,7 +3257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObjectLevel
         m_Mode: 3
         m_Arguments:
@@ -3530,13 +3545,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObject
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3738,7 +3753,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObject
         m_Mode: 3
         m_Arguments:
@@ -3948,7 +3963,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObject
         m_Mode: 3
         m_Arguments:
@@ -4078,7 +4093,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583753529}
+      - m_Target: {fileID: 4999989687511810775}
         m_MethodName: SetPlaceableObjectLevel
         m_Mode: 3
         m_Arguments:
