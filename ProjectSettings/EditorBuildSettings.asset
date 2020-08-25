@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/artIntegrationRichard.unity
     guid: 78ef8b9cba1a6d34b849e96707a3c7ce
+  - enabled: 1
+    path: Assets/Scenes/SetNickName.unity
+    guid: 28ad529ad9aea054a8639297a6e90ae5
+  - enabled: 1
+    path: Assets/Scenes/WorldCameraPosition.unity
+    guid: 9ad190ae7e23fca49860b10a496c6ee5
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0fa10be76bbcabd4cb3c7fffdf882f14,
       type: 2}
