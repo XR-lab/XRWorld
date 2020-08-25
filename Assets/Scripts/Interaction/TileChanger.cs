@@ -42,7 +42,7 @@ namespace XRWorld.Interaction
             Debug.Log(newData.id);
 
             newData.timeStamp = DateTime.Now.ToString("u");
-            
+            print(newData.timeStamp);
             _tile = _tileSelector.SelectedTile;
 
 

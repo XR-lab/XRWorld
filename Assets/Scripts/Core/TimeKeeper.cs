@@ -55,7 +55,7 @@ namespace XRWorld.Core
             if (level == 0) return level;
             
             DateTime original = DateTime.Parse(data.timeStamp);
-            DateTime currentTime = DateTime.Now;
+            DateTime currentTime = DateTime.Parse(DateTime.Now.ToString("u"));
             TimeSpan diff = currentTime - original;
 
             if (diff.TotalMinutes > _decayTime.TotalMinutes)
@@ -69,7 +69,7 @@ namespace XRWorld.Core
                 }
 
                 data.level = level;
-                data.timeStamp = DateTime.Now.ToString();
+                data.timeStamp = DateTime.Now.ToString("u");
                 _levelChangeHandler.ParsePlaceableObjectPlacement(ID.ToString(), data);
             }
 
