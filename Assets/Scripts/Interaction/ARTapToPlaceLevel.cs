@@ -55,7 +55,18 @@ namespace XRWorld.Interaction
             isPlaced = true;
             placementIndicator.SetActive(false);
             enabled = false;
-            _arPlaneManager.enabled = false;
+            DisablePlaneDetection();
+            
+        }
+
+        private void DisablePlaneDetection()
+        {
+            _arPlaneManager.enabled = !_arPlaneManager.enabled;
+
+            foreach (ARPlane plane in _arPlaneManager.trackables)
+            {
+             plane.gameObject.SetActive(_arPlaneManager.enabled = false);   
+            }
         }
 
         private void UpdatePlacementIndicator()
