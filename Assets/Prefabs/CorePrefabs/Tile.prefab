@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8433040363123939934}
-  - {fileID: 4823060065761301849}
+  - {fileID: 1740108579949875194}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112,31 +112,7 @@ MonoBehaviour:
   _spawnEffectPrefab: {fileID: 693690245801826285, guid: 67368ef5853363d4daed97c76debff33,
     type: 3}
   _spawnEffectTime: 0.5
-  _trailEffectPrefab: {fileID: 6918801793294708263, guid: f3f68971df8e1a241a2b5f93b667487a,
-    type: 3}
-  _tileData:
-    groundType: 0
-    posX: 0
-    posZ: 0
-    placeableObjectData:
-      id: 0
-      level: 0
-      progress: 0
-      placedBy: 
-      timeStamp: 
---- !u!114 &5237940339250613513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4335358968336260696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ac395e73e5bb44dbb4f41dc5df0882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ps: {fileID: 3424919109449117154}
+  _trailEffect: {fileID: 7413666164291273979}
 --- !u!1 &6695393377991102359
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +143,7 @@ Transform:
   m_Father: {fileID: 8827054539919327311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &6642474725481525375
+--- !u!1001 &497128282618112732
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -236,21 +212,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f68971df8e1a241a2b5f93b667487a, type: 3}
---- !u!1 &4335358968336260696 stripped
+--- !u!1 &7413666164291273979 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6918801793294708263, guid: f3f68971df8e1a241a2b5f93b667487a,
     type: 3}
-  m_PrefabInstance: {fileID: 6642474725481525375}
+  m_PrefabInstance: {fileID: 497128282618112732}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4823060065761301849 stripped
+--- !u!4 &1740108579949875194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2215836999037035814, guid: f3f68971df8e1a241a2b5f93b667487a,
     type: 3}
-  m_PrefabInstance: {fileID: 6642474725481525375}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3424919109449117154 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8334208362971356573, guid: f3f68971df8e1a241a2b5f93b667487a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6642474725481525375}
+  m_PrefabInstance: {fileID: 497128282618112732}
   m_PrefabAsset: {fileID: 0}

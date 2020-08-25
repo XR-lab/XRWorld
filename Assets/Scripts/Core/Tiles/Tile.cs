@@ -12,11 +12,11 @@ namespace XRWorld.Core.Tiles
         
         [SerializeField] private GameObject _spawnEffectPrefab;
         [SerializeField] private float _spawnEffectTime = 0.5f;
-        // data visualized for debuggin purpose
-        [SerializeField] private TileData _tileData;
+        [SerializeField] private GameObject _trailEffect;
+        
+        private TileData _tileData;
         public TileData TileData => _tileData;
         
-        // time variables
         private TimeKeeper _timeKeeper;
         
         private int _ID;
@@ -27,6 +27,7 @@ namespace XRWorld.Core.Tiles
         private GameObject tileEffect;
         private Renderer _renderer;
         private Transform _placeableObject;
+        
 
         private void Awake()
         {
@@ -89,7 +90,10 @@ namespace XRWorld.Core.Tiles
 
         public void OnTilePlaced()
         {
-            StartPlacableObjectSpawnEffect();
+            if (HasPlaceableObject)
+                StartPlacableObjectSpawnEffect();
+
+            Destroy(_trailEffect);
         }
         
         private void StartPlacableObjectSpawnEffect()
