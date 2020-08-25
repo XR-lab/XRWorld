@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bush
   m_EditorClassIdentifier: 
   _placeableObjectStates:
-  - {fileID: 2572664715094788372, guid: f0ef14834306d1346b5d99b7ab928a2e, type: 3}
-  - {fileID: 2583022864521867992, guid: 33a4f06e5236a234e9000ef33e36a4dd, type: 3}
-  - {fileID: 2907390629500690351, guid: 312e98994cd49ad4abc91535b8c27aaa, type: 3}
+  - {fileID: 3445712455190250050, guid: 1f7d9ba7345de40c3b72cd5c64018105, type: 3}
+  - {fileID: 2299795561482392024, guid: 8c72079b2fb914a7d9c94b1dcd56f090, type: 3}
+  - {fileID: 8622142861029213142, guid: 1e972d6a9732c4c399df33aac1902aba, type: 3}

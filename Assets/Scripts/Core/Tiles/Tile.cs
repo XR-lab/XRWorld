@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using XRWorld.Assets;
 
@@ -7,8 +8,9 @@ namespace XRWorld.Core.Tiles
     public class Tile : MonoBehaviour
     {
         [SerializeField] private Transform _placeableObjectSpawnpoint;
-        [SerializeField] private Transform _placeableObject;
-        [SerializeField] private GameObject _spawnEffect;
+        
+        [SerializeField] private GameObject _spawnEffectPrefab;
+        [SerializeField] private float _spawnEffectTime = 0.5f;
         
         // data visualized for debuggin purpose
         [SerializeField] private TileData _tileData;
@@ -24,7 +26,8 @@ namespace XRWorld.Core.Tiles
 
         private GameObject tileEffect;
         private Renderer _renderer;
-
+        private Transform _placeableObject;
+        
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
@@ -75,14 +78,27 @@ namespace XRWorld.Core.Tiles
             GameObject objectToSpawn = collection.GetGameObjectByLevel(_tileData.placeableObjectData.level);
             
             _placeableObject = Instantiate(objectToSpawn, spawnableObjectPosition, Quaternion.identity, transform).transform;
+            _placeableObject.gameObject.GetComponent<Renderer>().material.SetFloat("_SpawnProgress", 0);
 
             if (showSpawnFX)
-                Instantiate(_spawnEffect, transform);
+            {
+                Instantiate(_spawnEffectPrefab, transform);
+                StartPlacableObjectSpawnEffect();
+            }
+                
         }
 
+        public void StartPlacableObjectSpawnEffect()
+        {
+            LeanTween.value(_placeableObject.gameObject, UpdateSpawnEffect, 0f, 1f, _spawnEffectTime).setEaseOutCubic();
+        }
+        void UpdateSpawnEffect(float val)
+        {
+            _placeableObject.gameObject.GetComponent<Renderer>().material.SetFloat("_SpawnProgress", val);
+        }
         public void ReplacePlaceableObject(int placeableObjectID, int placeableObjectLevel)
         {
-            RemovePlaceableObject();
+            RemovePlaceableObject(); 
             AddPlaceableObject(placeableObjectID, placeableObjectLevel);
         }
 
