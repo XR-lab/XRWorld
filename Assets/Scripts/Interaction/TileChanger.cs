@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using XRWorld.Core;
 using XRWorld.Core.Tiles;
 using XRWorld.Database;
 using XRWorld.Users;
@@ -21,7 +20,11 @@ namespace XRWorld.Interaction
         private void Start()
         {
             _levelChangeHandler = FindObjectOfType<LevelChangeHandler>();
-            _nickname = FindObjectOfType<NickNameSetter>().GetNickName();
+            NickNameSetter ns = FindObjectOfType<NickNameSetter>();
+            if (ns != null)
+            {
+                _nickname = ns.GetNickName();
+            }
         }
         
 

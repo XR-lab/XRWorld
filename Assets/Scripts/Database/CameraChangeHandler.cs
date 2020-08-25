@@ -20,7 +20,11 @@ namespace XRWorld.Database
             _sessionId = Random.Range(0, 1000000).ToString();
             _collection = FindObjectOfType<CameraCollection>();
             _collection.SetSessionID(_sessionId);
-            _sesionNick = FindObjectOfType<NickNameSetter>().GetNickName();
+            NickNameSetter ns = FindObjectOfType<NickNameSetter>();
+            if (ns != null)
+            {
+                _sesionNick = ns.GetNickName();
+            }
         }
 
         public void AddCameraDataToDatabase(Vector3 pos, Vector3 rot)
