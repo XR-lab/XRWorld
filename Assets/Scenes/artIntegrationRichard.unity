@@ -202,6 +202,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[ Core ]'
       objectReference: {fileID: 0}
+    - target: {fileID: 2482539091760359179, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184745675519349386, guid: daaa29916250e00439dd899bb000cd2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5873533810719075457, guid: daaa29916250e00439dd899bb000cd2b,
         type: 3}
       propertyPath: m_Enabled

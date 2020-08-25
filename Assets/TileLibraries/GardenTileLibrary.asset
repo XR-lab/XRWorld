@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 463f64b75e086d844b428b6b30289f18, type: 2}
   - {fileID: 11400000, guid: 33eeda34f3bb0364f8d47db107f086cf, type: 2}
   - {fileID: 11400000, guid: 4db0d7ad24225c04b96de7e70a6a3077, type: 2}
+  - {fileID: 11400000, guid: 3341c7bc91700114a9793d6f4fc1b0dd, type: 2}
   _tileEffects:
   - groundType: 2
     ParticleSystemGameObject: {fileID: 7833859490498220244, guid: 2fc6200548ca60049803dacba11803c6,

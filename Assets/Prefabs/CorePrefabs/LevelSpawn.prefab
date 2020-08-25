@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb7ce613f8d5f64595295b419f5d82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilePrefab: {fileID: 1118818378297947301, guid: 7f2218fd3b6e99c4ca5f2380d359a39e,
+  _tilePrefab: {fileID: 5215640959114262974, guid: a7aea28248a74af4e93ab8d5e04a49ae,
     type: 3}
   _tileLibrary: {fileID: 11400000, guid: af7b020ecd985c042b801a2996e52304, type: 2}
   _maxHeightOffset: 0.25
